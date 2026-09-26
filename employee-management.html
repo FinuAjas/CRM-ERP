@@ -76,7 +76,7 @@
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#inventoryMenu" aria-expanded="false">
               <i class="bi bi-box-seam"></i><span>Inventory</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="inventoryMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Inventory">Inventory Dashboard</a><a class="nav-sublink" href="templates/pages/entity-list.html?module=Inventory&amp;entity=Product">Inventory Register</a><a class="nav-sublink" href="templates/pages/entity-grid.html?module=Inventory&amp;entity=Product">Inventory Cards</a>
+            <div class="collapse nav-submenu" id="inventoryMenu"><a class="nav-sublink" href="module-dashboard.html?module=Inventory">Inventory Dashboard</a><a class="nav-sublink" href="entity-list.html?module=Inventory&amp;entity=Product">Inventory Register</a><a class="nav-sublink" href="entity-grid.html?module=Inventory&amp;entity=Product">Inventory Cards</a>
               <a class="nav-sublink" href="product-stock.html">Stock Overview</a>
               <a class="nav-sublink" href="product-batch-details.html">Batch Details</a>
               <a class="nav-sublink" href="product-stock-ledger.html">Stock Ledger</a>
@@ -91,26 +91,26 @@
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#purchaseMenu" aria-expanded="false">
               <i class="bi bi-bag-check"></i><span>Purchases</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="purchaseMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Purchases">Purchases Dashboard</a><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Suppliers">Supplier Dashboard</a>
-              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Purchases&amp;entity=Purchase%20Order">Purchase Orders</a>
-              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Inventory&amp;entity=Material%20Receipt">Material Receipts</a>
-              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Suppliers&amp;entity=Supplier">Suppliers</a>
-              <a class="nav-sublink" href="templates/pages/approval.html?module=Purchases&amp;entity=Expense">Purchase Expenses</a>
-              <a class="nav-sublink" href="templates/pages/transaction-form.html?module=Returns&amp;entity=Purchase%20Return">Purchase Returns</a>
+            <div class="collapse nav-submenu" id="purchaseMenu"><a class="nav-sublink" href="module-dashboard.html?module=Purchases">Purchases Dashboard</a><a class="nav-sublink" href="module-dashboard.html?module=Suppliers">Supplier Dashboard</a>
+              <a class="nav-sublink" href="transaction-details.html?module=Purchases&amp;entity=Purchase%20Order">Purchase Orders</a>
+              <a class="nav-sublink" href="transaction-details.html?module=Inventory&amp;entity=Material%20Receipt">Material Receipts</a>
+              <a class="nav-sublink" href="entity-list.html?module=Suppliers&amp;entity=Supplier">Suppliers</a>
+              <a class="nav-sublink" href="approval.html?module=Purchases&amp;entity=Expense">Purchase Expenses</a>
+              <a class="nav-sublink" href="transaction-form.html?module=Returns&amp;entity=Purchase%20Return">Purchase Returns</a>
             </div>
           </div>
 
-          <div class="nav-dropdown"><a class="nav-link" href="templates/pages/module-dashboard.html?module=Suppliers"><i class="bi bi-truck"></i><span>Suppliers</span></a></div>
+          <div class="nav-dropdown"><a class="nav-link" href="module-dashboard.html?module=Suppliers"><i class="bi bi-truck"></i><span>Suppliers</span></a></div>
           <div class="nav-dropdown">
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#productionMenu" aria-expanded="false">
               <i class="bi bi-gear-wide-connected"></i><span>Production</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="productionMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Production">Production Dashboard</a>
-              <a class="nav-sublink" href="templates/pages/transaction-form.html?module=Production&amp;entity=Production%20Order">Production Entry</a>
-              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Production&amp;entity=Production%20Order">Daily Production</a>
-              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Production&amp;entity=Material%20Consumption">Raw Material Consumption</a>
-              <a class="nav-sublink" href="templates/pages/approval.html?module=Production&amp;entity=Expense">Production Expenses</a>
-              <a class="nav-sublink" href="templates/pages/entity-grid.html?module=Inventory&amp;entity=Finished%20Goods">Finished Goods</a>
+            <div class="collapse nav-submenu" id="productionMenu"><a class="nav-sublink" href="module-dashboard.html?module=Production">Production Dashboard</a>
+              <a class="nav-sublink" href="transaction-form.html?module=Production&amp;entity=Production%20Order">Production Entry</a>
+              <a class="nav-sublink" href="entity-list.html?module=Production&amp;entity=Production%20Order">Daily Production</a>
+              <a class="nav-sublink" href="transaction-details.html?module=Production&amp;entity=Material%20Consumption">Raw Material Consumption</a>
+              <a class="nav-sublink" href="approval.html?module=Production&amp;entity=Expense">Production Expenses</a>
+              <a class="nav-sublink" href="entity-grid.html?module=Inventory&amp;entity=Finished%20Goods">Finished Goods</a>
             </div>
           </div>
 
@@ -142,13 +142,13 @@
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#customersMenu" aria-expanded="false">
               <i class="bi bi-people"></i><span>Customers</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="customersMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Customers">Customer Dashboard</a>
-              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Customers&amp;entity=Customer">Customer List</a>
-              <a class="nav-sublink" href="templates/pages/entity-grid.html?module=Customers&amp;entity=Customer%20Group">Customer Groups</a>
-              <a class="nav-sublink" href="templates/pages/entity-details.html?module=Customers&amp;entity=Credit%20Account">Credit Accounts</a>
-              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Customers&amp;entity=Customer%20Payment">Outstanding Payments</a>
-              <a class="nav-sublink" href="templates/pages/activity-log.html?module=Customers&amp;entity=Payment">Payment History</a>
-              <a class="nav-sublink" href="templates/pages/calendar.html?module=Customers&amp;entity=Customer%20Visit">Customer Visits</a>
+            <div class="collapse nav-submenu" id="customersMenu"><a class="nav-sublink" href="module-dashboard.html?module=Customers">Customer Dashboard</a>
+              <a class="nav-sublink" href="entity-list.html?module=Customers&amp;entity=Customer">Customer List</a>
+              <a class="nav-sublink" href="entity-grid.html?module=Customers&amp;entity=Customer%20Group">Customer Groups</a>
+              <a class="nav-sublink" href="entity-details.html?module=Customers&amp;entity=Credit%20Account">Credit Accounts</a>
+              <a class="nav-sublink" href="transaction-details.html?module=Customers&amp;entity=Customer%20Payment">Outstanding Payments</a>
+              <a class="nav-sublink" href="module-activity-log.html?module=Customers&amp;entity=Payment">Payment History</a>
+              <a class="nav-sublink" href="calendar.html?module=Customers&amp;entity=Customer%20Visit">Customer Visits</a>
             </div>
           </div>
 
@@ -156,14 +156,14 @@
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#distributorMenu" aria-expanded="false">
               <i class="bi bi-person-vcard"></i><span>Distributors</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="distributorMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Distributors">Distributor Dashboard</a>
-              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Distributors&amp;entity=Distributor">Distributor List</a>
-              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Distributors&amp;entity=Distributor%20Sale">Distributor Sales</a>
-              <a class="nav-sublink" href="templates/pages/entity-details.html?module=Distributors&amp;entity=Distributor%20Stock">Distributor Stock</a>
-              <a class="nav-sublink" href="templates/pages/entity-grid.html?module=Distributors&amp;entity=Distributor%20Rate">Distributor Rates</a>
-              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Distributors&amp;entity=Distributor%20Payment">Distributor Payments</a>
-              <a class="nav-sublink" href="templates/pages/transaction-form.html?module=Returns&amp;entity=Distributor%20Return">Distributor Returns</a>
-              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Staff&amp;entity=Staff%20Member">Distributor Staff</a>
+            <div class="collapse nav-submenu" id="distributorMenu"><a class="nav-sublink" href="module-dashboard.html?module=Distributors">Distributor Dashboard</a>
+              <a class="nav-sublink" href="entity-list.html?module=Distributors&amp;entity=Distributor">Distributor List</a>
+              <a class="nav-sublink" href="transaction-details.html?module=Distributors&amp;entity=Distributor%20Sale">Distributor Sales</a>
+              <a class="nav-sublink" href="entity-details.html?module=Distributors&amp;entity=Distributor%20Stock">Distributor Stock</a>
+              <a class="nav-sublink" href="entity-grid.html?module=Distributors&amp;entity=Distributor%20Rate">Distributor Rates</a>
+              <a class="nav-sublink" href="transaction-details.html?module=Distributors&amp;entity=Distributor%20Payment">Distributor Payments</a>
+              <a class="nav-sublink" href="transaction-form.html?module=Returns&amp;entity=Distributor%20Return">Distributor Returns</a>
+              <a class="nav-sublink" href="entity-list.html?module=Staff&amp;entity=Staff%20Member">Distributor Staff</a>
             </div>
           </div>
 
@@ -199,7 +199,7 @@
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#returnsMenu" aria-expanded="false">
               <i class="bi bi-arrow-return-left"></i><span>Returns & Claims</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="returnsMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Returns">Returns Dashboard</a>
+            <div class="collapse nav-submenu" id="returnsMenu"><a class="nav-sublink" href="module-dashboard.html?module=Returns">Returns Dashboard</a>
               <a class="nav-sublink" href="sales-returns.html">Sales Returns</a>
               <a class="nav-sublink" href="sales-return-create.html">Create Sales Return</a>
               <a class="nav-sublink" href="sales-return-details.html">Return Details</a>
@@ -248,12 +248,12 @@
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#hrMenu" aria-expanded="true">
               <i class="bi bi-person-workspace"></i><span>Staff & HR</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu show" id="hrMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Staff">Staff Dashboard</a>
+            <div class="collapse nav-submenu show" id="hrMenu"><a class="nav-sublink" href="module-dashboard.html?module=Staff">Staff Dashboard</a>
               <a class="nav-sublink active" href="staff-list.html">Staff Directory</a>
-              <a class="nav-sublink" href="templates/pages/activity-log.html?module=Staff&amp;entity=Attendance">Attendance</a>
-              <a class="nav-sublink" href="templates/pages/approval.html?module=Staff&amp;entity=Leave%20Request">Leave Management</a>
-              <a class="nav-sublink" href="templates/pages/financial-report.html?module=Staff&amp;entity=Payroll">Salary Records</a>
-              <a class="nav-sublink" href="templates/pages/approval.html?module=Staff&amp;entity=Staff%20Expense">Staff Expenses</a>
+              <a class="nav-sublink" href="module-activity-log.html?module=Staff&amp;entity=Attendance">Attendance</a>
+              <a class="nav-sublink" href="approval.html?module=Staff&amp;entity=Leave%20Request">Leave Management</a>
+              <a class="nav-sublink" href="financial-report.html?module=Staff&amp;entity=Payroll">Salary Records</a>
+              <a class="nav-sublink" href="approval.html?module=Staff&amp;entity=Staff%20Expense">Staff Expenses</a>
             </div>
           </div>
 
@@ -273,7 +273,7 @@
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#schemesMenu" aria-expanded="false">
               <i class="bi bi-megaphone"></i><span>Schemes & Offers</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="schemesMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Schemes%20%26%20Offers">Workspace Dashboard</a><a class="nav-sublink" href="templates/pages/entity-grid.html?module=Schemes%20%26%20Offers&amp;entity=Scheme">Scheme Cards</a>
+            <div class="collapse nav-submenu" id="schemesMenu"><a class="nav-sublink" href="module-dashboard.html?module=Schemes%20%26%20Offers">Workspace Dashboard</a><a class="nav-sublink" href="entity-grid.html?module=Schemes%20%26%20Offers&amp;entity=Scheme">Scheme Cards</a>
               <a class="nav-sublink" href="product-schemes.html">Product Schemes</a>
               <a class="nav-sublink" href="product-discounts.html">Product Discounts</a>
               <a class="nav-sublink" href="product-barcode.html">Barcode Labels</a>
@@ -284,12 +284,12 @@
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#crmSupportMenu" aria-expanded="false">
               <i class="bi bi-headset"></i><span>CRM & Support</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="crmSupportMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=CRM">CRM Dashboard</a>
-              <a class="nav-sublink" href="templates/pages/calendar.html?module=CRM&amp;entity=Task">Tasks</a>
-              <a class="nav-sublink" href="templates/pages/kanban.html?module=CRM&amp;entity=Follow-up">Follow-ups</a>
-              <a class="nav-sublink" href="templates/pages/entity-list.html?module=CRM&amp;entity=Support%20Ticket">Customer Complaints</a>
-              <a class="nav-sublink" href="templates/pages/kanban.html?module=CRM&amp;entity=Support%20Ticket">Support Tickets</a>
-              <a class="nav-sublink" href="templates/pages/activity-log.html?module=CRM&amp;entity=Activity">Activity Timeline</a>
+            <div class="collapse nav-submenu" id="crmSupportMenu"><a class="nav-sublink" href="module-dashboard.html?module=CRM">CRM Dashboard</a>
+              <a class="nav-sublink" href="calendar.html?module=CRM&amp;entity=Task">Tasks</a>
+              <a class="nav-sublink" href="kanban.html?module=CRM&amp;entity=Follow-up">Follow-ups</a>
+              <a class="nav-sublink" href="entity-list.html?module=CRM&amp;entity=Support%20Ticket">Customer Complaints</a>
+              <a class="nav-sublink" href="kanban.html?module=CRM&amp;entity=Support%20Ticket">Support Tickets</a>
+              <a class="nav-sublink" href="module-activity-log.html?module=CRM&amp;entity=Activity">Activity Timeline</a>
             </div>
           </div>
 
