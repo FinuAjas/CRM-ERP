@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Modern Food Retail CRM Dashboard">
+  <title>Food CRM — Dashboard</title>
+
+  <!-- Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.8 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/preferences.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- Mobile backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand text-decoration-none">
+          <span class="brand-mark"><i class="bi bi-grid-1x2-fill"></i></span>
+          <span>
+            <strong>Food<span>CRM</span></strong>
+            <small>Business Platform</small>
+          </span>
+        </a>
+        <button class="btn btn-icon sidebar-close d-lg-none" id="sidebarClose" aria-label="Close menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-scroll">
+        <div class="nav-section-label">MAIN MENU</div>
+        <nav class="nav flex-column app-nav">
+
+          <a class="nav-link active" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#salesMenu" aria-expanded="false">
+              <i class="bi bi-cart3"></i><span>Sales</span><span class="nav-badge">12</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="salesMenu">
+              <a class="nav-sublink" href="sales.html">Sales Overview</a>
+              <a class="nav-sublink" href="sales-dashboard.html">Sales Dashboard</a>
+              <a class="nav-sublink" href="sales-orders.html">Sales Orders</a>
+              <a class="nav-sublink" href="sales-order-create.html">Create Sales Order</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#vanSalesMenu" aria-expanded="false">
+              <i class="bi bi-truck"></i><span>Van Sales</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="vanSalesMenu">
+              <span class="nav-sublink nav-sublink-disabled" aria-disabled="true">Van Dashboard</span>
+              <span class="nav-sublink nav-sublink-disabled" aria-disabled="true">Van Sales Entry</span>
+              <span class="nav-sublink nav-sublink-disabled" aria-disabled="true">Van Stock</span>
+              <span class="nav-sublink nav-sublink-disabled" aria-disabled="true">Route Planning</span>
+              <span class="nav-sublink nav-sublink-disabled" aria-disabled="true">Collections</span>
+              <span class="nav-sublink nav-sublink-disabled" aria-disabled="true">Van Returns</span>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#inventoryMenu" aria-expanded="false">
+              <i class="bi bi-box-seam"></i><span>Inventory</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="inventoryMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Inventory">Inventory Dashboard</a><a class="nav-sublink" href="templates/pages/entity-list.html?module=Inventory&amp;entity=Product">Inventory Register</a><a class="nav-sublink" href="templates/pages/entity-grid.html?module=Inventory&amp;entity=Product">Inventory Cards</a>
+              <a class="nav-sublink" href="product-stock.html">Stock Overview</a>
+              <a class="nav-sublink" href="product-batch-details.html">Batch Details</a>
+              <a class="nav-sublink" href="product-stock-ledger.html">Stock Ledger</a>
+              <a class="nav-sublink" href="product-stock-adjustment.html">Stock Adjustment</a>
+              <a class="nav-sublink" href="product-stock-transfer.html">Stock Transfer</a>
+              <a class="nav-sublink" href="product-low-stock.html">Low Stock</a>
+              <a class="nav-sublink" href="product-expiry.html">Expiry Management</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#purchaseMenu" aria-expanded="false">
+              <i class="bi bi-bag-check"></i><span>Purchases</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="purchaseMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Purchases">Purchases Dashboard</a><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Suppliers">Supplier Dashboard</a>
+              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Purchases&amp;entity=Purchase%20Order">Purchase Orders</a>
+              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Inventory&amp;entity=Material%20Receipt">Material Receipts</a>
+              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Suppliers&amp;entity=Supplier">Suppliers</a>
+              <a class="nav-sublink" href="templates/pages/approval.html?module=Purchases&amp;entity=Expense">Purchase Expenses</a>
+              <a class="nav-sublink" href="templates/pages/transaction-form.html?module=Returns&amp;entity=Purchase%20Return">Purchase Returns</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown"><a class="nav-link" href="templates/pages/module-dashboard.html?module=Suppliers"><i class="bi bi-truck"></i><span>Suppliers</span></a></div>
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#productionMenu" aria-expanded="false">
+              <i class="bi bi-gear-wide-connected"></i><span>Production</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="productionMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Production">Production Dashboard</a>
+              <a class="nav-sublink" href="templates/pages/transaction-form.html?module=Production&amp;entity=Production%20Order">Production Entry</a>
+              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Production&amp;entity=Production%20Order">Daily Production</a>
+              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Production&amp;entity=Material%20Consumption">Raw Material Consumption</a>
+              <a class="nav-sublink" href="templates/pages/approval.html?module=Production&amp;entity=Expense">Production Expenses</a>
+              <a class="nav-sublink" href="templates/pages/entity-grid.html?module=Inventory&amp;entity=Finished%20Goods">Finished Goods</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#productsMenu" aria-expanded="false">
+              <i class="bi bi-boxes"></i><span>Products</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="productsMenu">
+              <a class="nav-sublink" href="products.html">Product List</a>
+              <a class="nav-sublink" href="product-dashboard.html">Product Dashboard</a>
+              <a class="nav-sublink" href="product-create.html">Add Product</a>
+              <a class="nav-sublink" href="product-categories.html">Categories</a>
+              <a class="nav-sublink" href="product-brands.html">Brands</a>
+              <a class="nav-sublink" href="product-units.html">Units</a>
+              <a class="nav-sublink" href="product-pricing.html">Pricing &amp; Rates</a>
+              <a class="nav-sublink" href="product-price-history.html">Price History</a>
+              <a class="nav-sublink" href="product-batches.html">Batches</a>
+              <a class="nav-sublink" href="product-expiry.html">Expiry Management</a>
+              <a class="nav-sublink" href="product-low-stock.html">Low Stock</a>
+              <a class="nav-sublink" href="product-schemes.html">Product Schemes</a>
+              <a class="nav-sublink" href="product-discounts.html">Discounts</a>
+              <a class="nav-sublink" href="product-barcode.html">Barcode Labels</a>
+              <a class="nav-sublink" href="product-import-export.html">Import / Export</a>
+              <a class="nav-sublink" href="product-reports.html">Product Reports</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#customersMenu" aria-expanded="false">
+              <i class="bi bi-people"></i><span>Customers</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="customersMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Customers">Customer Dashboard</a>
+              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Customers&amp;entity=Customer">Customer List</a>
+              <a class="nav-sublink" href="templates/pages/entity-grid.html?module=Customers&amp;entity=Customer%20Group">Customer Groups</a>
+              <a class="nav-sublink" href="templates/pages/entity-details.html?module=Customers&amp;entity=Credit%20Account">Credit Accounts</a>
+              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Customers&amp;entity=Customer%20Payment">Outstanding Payments</a>
+              <a class="nav-sublink" href="templates/pages/activity-log.html?module=Customers&amp;entity=Payment">Payment History</a>
+              <a class="nav-sublink" href="templates/pages/calendar.html?module=Customers&amp;entity=Customer%20Visit">Customer Visits</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#distributorMenu" aria-expanded="false">
+              <i class="bi bi-person-vcard"></i><span>Distributors</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="distributorMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Distributors">Distributor Dashboard</a>
+              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Distributors&amp;entity=Distributor">Distributor List</a>
+              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Distributors&amp;entity=Distributor%20Sale">Distributor Sales</a>
+              <a class="nav-sublink" href="templates/pages/entity-details.html?module=Distributors&amp;entity=Distributor%20Stock">Distributor Stock</a>
+              <a class="nav-sublink" href="templates/pages/entity-grid.html?module=Distributors&amp;entity=Distributor%20Rate">Distributor Rates</a>
+              <a class="nav-sublink" href="templates/pages/transaction-details.html?module=Distributors&amp;entity=Distributor%20Payment">Distributor Payments</a>
+              <a class="nav-sublink" href="templates/pages/transaction-form.html?module=Returns&amp;entity=Distributor%20Return">Distributor Returns</a>
+              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Staff&amp;entity=Staff%20Member">Distributor Staff</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceMenu" aria-expanded="false">
+              <i class="bi bi-receipt"></i><span>Invoices</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="invoiceMenu">
+              <a class="nav-sublink" href="sales-invoices.html">All Invoices</a>
+              <a class="nav-sublink" href="sales-invoice-create.html">Create Invoice</a>
+              <a class="nav-sublink" href="sales-returns.html">Credit Notes</a>
+              <a class="nav-sublink" href="sales-reports.html">Print / Export</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collectionMenu" aria-expanded="false">
+              <i class="bi bi-cash-coin"></i><span>Collections</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="collectionMenu">
+              <a class="nav-sublink" href="customer-payments.html">Customer Payments</a>
+              <a class="nav-sublink" href="customer-payment-create.html">Record Payment</a>
+              <a class="nav-sublink" href="customer-payments.html">Today&#x27;s Collections</a>
+              <a class="nav-sublink" href="customer-payments.html">Outstanding</a>
+              <a class="nav-sublink" href="customer-payments.html">Cash</a>
+              <a class="nav-sublink" href="customer-payments.html">UPI</a>
+              <a class="nav-sublink" href="customer-payments.html">Bank</a>
+              <a class="nav-sublink" href="customer-payments.html">Collection History</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#returnsMenu" aria-expanded="false">
+              <i class="bi bi-arrow-return-left"></i><span>Returns & Claims</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="returnsMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Returns">Returns Dashboard</a>
+              <a class="nav-sublink" href="sales-returns.html">Sales Returns</a>
+              <a class="nav-sublink" href="sales-return-create.html">Create Sales Return</a>
+              <a class="nav-sublink" href="sales-return-details.html">Return Details</a>
+              <a class="nav-sublink" href="sales-returns.html">Purchase Returns</a>
+              <a class="nav-sublink" href="sales-returns.html">Product Claims</a>
+              <a class="nav-sublink" href="sales-returns.html">Damaged Stock</a>
+              <a class="nav-sublink" href="sales-returns.html">Return Approval</a>
+            </div>
+          </div>
+
+          <div class="nav-section-label mt-3">BUSINESS</div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#accountsMenu" aria-expanded="false">
+              <i class="bi bi-bank"></i><span>Accounts</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="accountsMenu">
+              <a class="nav-sublink" href="accounts.html">Accounts Overview</a>
+              <a class="nav-sublink" href="account-dashboard.html">Account Dashboard</a>
+              <a class="nav-sublink" href="chart-of-accounts.html">Chart of Accounts</a>
+              <a class="nav-sublink" href="ledger.html">General Ledger</a>
+              <a class="nav-sublink" href="journal-entries.html">Journal Entries</a>
+              <a class="nav-sublink" href="journal-entry-create.html">Create Journal Entry</a>
+              <a class="nav-sublink" href="receivables.html">Receivables</a>
+              <a class="nav-sublink" href="payables.html">Payables</a>
+              <a class="nav-sublink" href="customer-statements.html">Customer Statements</a>
+              <a class="nav-sublink" href="supplier-statements.html">Supplier Statements</a>
+              <a class="nav-sublink" href="customer-payments.html">Customer Payments</a>
+              <a class="nav-sublink" href="supplier-payments.html">Supplier Payments</a>
+              <a class="nav-sublink" href="expenses.html">Expenses</a>
+              <a class="nav-sublink" href="expense-create.html">Record Expense</a>
+              <a class="nav-sublink" href="cash-book.html">Cash Book</a>
+              <a class="nav-sublink" href="bank-accounts.html">Bank Accounts</a>
+              <a class="nav-sublink" href="bank-transactions.html">Bank Transactions</a>
+              <a class="nav-sublink" href="bank-reconciliation.html">Bank Reconciliation</a>
+              <a class="nav-sublink" href="profit-loss.html">Profit &amp; Loss</a>
+              <a class="nav-sublink" href="balance-sheet.html">Balance Sheet</a>
+              <a class="nav-sublink" href="trial-balance.html">Trial Balance</a>
+              <a class="nav-sublink" href="cash-flow.html">Cash Flow</a>
+              <a class="nav-sublink" href="tax-reports.html">Tax Reports</a>
+              <a class="nav-sublink" href="account-reports.html">Account Reports</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#hrMenu" aria-expanded="false">
+              <i class="bi bi-person-workspace"></i><span>Staff & HR</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="hrMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Staff">Staff Dashboard</a>
+              <a class="nav-sublink" href="templates/pages/entity-list.html?module=Staff&amp;entity=Staff%20Member">Staff Directory</a>
+              <a class="nav-sublink" href="templates/pages/activity-log.html?module=Staff&amp;entity=Attendance">Attendance</a>
+              <a class="nav-sublink" href="templates/pages/approval.html?module=Staff&amp;entity=Leave%20Request">Leave Management</a>
+              <a class="nav-sublink" href="templates/pages/financial-report.html?module=Staff&amp;entity=Payroll">Salary Records</a>
+              <a class="nav-sublink" href="templates/pages/approval.html?module=Staff&amp;entity=Staff%20Expense">Staff Expenses</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#reportsMenu" aria-expanded="false">
+              <i class="bi bi-bar-chart-line"></i><span>Reports</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="reportsMenu">
+              <a class="nav-sublink" href="sales-reports.html">Sales Reports</a>
+              <a class="nav-sublink" href="sales-targets.html">Sales Targets</a>
+              <a class="nav-sublink" href="salesperson-performance.html">Salesperson Performance</a>
+              <a class="nav-sublink" href="sales-reports.html">Purchase Reports</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#schemesMenu" aria-expanded="false">
+              <i class="bi bi-megaphone"></i><span>Schemes & Offers</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="schemesMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=Schemes%20%26%20Offers">Workspace Dashboard</a><a class="nav-sublink" href="templates/pages/entity-grid.html?module=Schemes%20%26%20Offers&amp;entity=Scheme">Scheme Cards</a>
+              <a class="nav-sublink" href="product-schemes.html">Product Schemes</a>
+              <a class="nav-sublink" href="product-discounts.html">Product Discounts</a>
+              <a class="nav-sublink" href="product-barcode.html">Barcode Labels</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#crmSupportMenu" aria-expanded="false">
+              <i class="bi bi-headset"></i><span>CRM & Support</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="crmSupportMenu"><a class="nav-sublink" href="templates/pages/module-dashboard.html?module=CRM">CRM Dashboard</a>
+              <a class="nav-sublink" href="templates/pages/calendar.html?module=CRM&amp;entity=Task">Tasks</a>
+              <a class="nav-sublink" href="templates/pages/kanban.html?module=CRM&amp;entity=Follow-up">Follow-ups</a>
+              <a class="nav-sublink" href="templates/pages/entity-list.html?module=CRM&amp;entity=Support%20Ticket">Customer Complaints</a>
+              <a class="nav-sublink" href="templates/pages/kanban.html?module=CRM&amp;entity=Support%20Ticket">Support Tickets</a>
+              <a class="nav-sublink" href="templates/pages/activity-log.html?module=CRM&amp;entity=Activity">Activity Timeline</a>
+            </div>
+          </div>
+
+          <div class="nav-section-label mt-3">SYSTEM</div>
+
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#usersMenu" aria-expanded="false">
+              <i class="bi bi-person-gear"></i><span>User Management</span><i class="bi bi-chevron-down nav-chevron"></i>
+            </button>
+            <div class="collapse nav-submenu" id="usersMenu">
+              <a class="nav-sublink" href="users.html">Users</a>
+              <a class="nav-sublink" href="user-create.html">Add User</a>
+              <a class="nav-sublink" href="roles.html">Roles</a>
+              <a class="nav-sublink" href="permissions.html">Permissions</a>
+              <a class="nav-sublink" href="activity-log.html">Activity Log</a>
+              <a class="nav-sublink" href="login.html">Login</a>
+              <a class="nav-sublink" href="forgot-password.html">Forgot Password</a>
+              <a class="nav-sublink" href="profile.html">My Profile</a>
+            </div>
+          </div>
+
+          <a class="nav-link" href="settings.html"><i class="bi bi-sliders2"></i><span>Settings</span></a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="support-card">
+          <div class="support-icon"><i class="bi bi-life-preserver"></i></div>
+          <div>
+            <strong>Need help?</strong>
+            <small>Contact your administrator</small>
+          </div>
+        </div>
+        <div class="sidebar-version">Food CRM · v1.0</div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="app-main">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-icon d-lg-none" id="sidebarToggle" aria-label="Open menu">
+            <i class="bi bi-list"></i>
+          </button>
+          <div class="breadcrumb-wrap">
+            <span class="eyebrow">Business Overview</span>
+            <h1 class="page-title mb-0">Dashboard</h1>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="dropdown branch-dropdown d-none d-md-block">
+            <button class="branch-selector dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-building"></i>
+              <span id="selectedBranch">Head Office · All Branches</span>
+            </button>
+            <ul class="dropdown-menu branch-menu">
+              <li><button class="dropdown-item active" type="button" data-branch="Head Office · All Branches">Head Office · All Branches</button></li>
+              <li><button class="dropdown-item" type="button" data-branch="North Region">North Region</button></li>
+              <li><button class="dropdown-item" type="button" data-branch="South Region">South Region</button></li>
+              <li><button class="dropdown-item" type="button" data-branch="Central Region">Central Region</button></li>
+            </ul>
+          </div>
+
+          <div class="topbar-search" id="topbarSearch">
+            <button class="btn btn-icon search-toggle" id="searchToggle" title="Search" aria-label="Search">
+              <i class="bi bi-search"></i>
+            </button>
+            <input type="search" id="globalSearch" class="global-search-input" placeholder="Search customers, products, invoices..." aria-label="Global search">
+          </div>
+          <div class="search-results-preview" id="searchResultsPreview">
+            <div><i class="bi bi-search"></i><span>Type to search customers, products, invoices and more</span></div>
+          </div>
+
+          <div class="dropdown notification-dropdown">
+            <button class="btn btn-icon position-relative" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications and messages" aria-label="Notifications and messages">
+              <i class="bi bi-bell"></i>
+              <span class="notification-dot">5</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end notification-menu shadow">
+              <div class="dropdown-panel-header">
+                <div><strong>Updates</strong><small>3 notifications · 2 messages</small></div>
+                <button type="button" class="btn btn-link btn-sm">Mark all read</button>
+              </div>
+              <div class="notification-item unread">
+                <span class="notification-icon blue"><i class="bi bi-box-seam"></i></span>
+                <div><strong>Low stock alert</strong><small>Meat Masala 100g is below reorder level.</small><time>5 min ago</time></div>
+              </div>
+              <div class="notification-item unread">
+                <span class="notification-icon green"><i class="bi bi-receipt"></i></span>
+                <div><strong>New sales order</strong><small>City Bakery & Stores placed a new order.</small><time>18 min ago</time></div>
+              </div>
+              <div class="notification-item">
+                <span class="notification-icon amber"><i class="bi bi-clock-history"></i></span>
+                <div><strong>Payment overdue</strong><small>Fatima Traders has an overdue invoice.</small><time>1 hour ago</time></div>
+              </div>
+                            <div class="notification-section-label"><i class="bi bi-chat-left-text"></i> Messages</div>
+              <div class="message-item unread">
+                <span class="message-avatar">AK</span>
+                <div><strong>Akhil · Sales Executive</strong><small>Today's route has been completed.</small><time>10 min ago</time></div>
+              </div>
+              <div class="message-item unread">
+                <span class="message-avatar alt">SM</span>
+                <div><strong>Sales Manager</strong><small>Please review the pending collections.</small><time>35 min ago</time></div>
+              </div>              <a href="activity-log.html" class="dropdown-panel-footer">Open activity log <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <button class="btn btn-icon" id="themeToggle" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+            <i class="bi bi-moon-stars" id="themeIcon"></i>
+          </button>
+
+          <div class="dropdown">
+            <button class="user-menu btn border-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="avatar">AD</span>
+              <span class="user-meta d-none d-sm-block text-start">
+                <strong>Admin</strong>
+                <small>Administrator</small>
+              </span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="settings.html"><i class="bi bi-person me-2"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="bi bi-gear me-2"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-area">
+
+        <!-- Page intro -->
+        <section class="page-intro">
+          <div>
+            <h2>Good morning, Admin <span class="wave">👋</span></h2>
+            <p>Here’s what’s happening across your business today.</p>
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="btn btn-primary"><i class="bi bi-plus-lg me-2"></i>New Sale</button>
+            <button class="btn btn-soft"><i class="bi bi-download me-2"></i>Export</button>
+          </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filter-card card border-0">
+          <div class="card-body">
+            <div class="row g-3 align-items-end">
+              <div class="col-12 col-sm-6 col-lg-2">
+                <label class="form-label">Date Range</label>
+                <select class="form-select">
+                  <option>This Month</option>
+                  <option>Today</option>
+                  <option>This Week</option>
+                  <option>Last Month</option>
+                  <option>Custom Range</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-2">
+                <label class="form-label">Product Category</label>
+                <select class="form-select">
+                  <option>All Categories</option>
+                  <option>Masalas</option>
+                  <option>Pickles</option>
+                  <option>Puttu Podi</option>
+                  <option>Tea & Coffee</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-2">
+                <label class="form-label">Product</label>
+                <select class="form-select">
+                  <option>All Products</option>
+                  <option>White Puttu Podi 500g</option>
+                  <option>Chicken Masala 100g</option>
+                  <option>Fish Masala 100g</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-2">
+                <label class="form-label">Region / Area</label>
+                <select class="form-select">
+                  <option>All Regions</option>
+                  <option>Kannur</option>
+                  <option>Kozhikode</option>
+                  <option>Malappuram</option>
+                  <option>Wayanad</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-2">
+                <label class="form-label">Sales Channel</label>
+                <select class="form-select">
+                  <option>All Channels</option>
+                  <option>Retail</option>
+                  <option>Wholesale</option>
+                  <option>Distributor</option>
+                  <option>Van Sales</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-2 d-flex gap-2">
+                <button class="btn btn-primary flex-grow-1"><i class="bi bi-funnel me-1"></i> Apply</button>
+                <button class="btn btn-light border" title="Reset"><i class="bi bi-arrow-counterclockwise"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- KPI Cards -->
+        <section class="row g-3 mb-4">
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="kpi-card card border-0 kpi-primary h-100">
+              <div class="card-body">
+                <div class="kpi-top">
+                  <div class="kpi-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                  <span class="trend positive"><i class="bi bi-arrow-up"></i> 12%</span>
+                </div>
+                <p class="kpi-label">Total Sales</p>
+                <h3>₹24,85,000</h3>
+                <div class="kpi-footer"><span>vs last month</span><i class="bi bi-three-dots"></i></div>
+                <div class="mini-sparkline"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="kpi-card card border-0 kpi-blue h-100">
+              <div class="card-body">
+                <div class="kpi-top">
+                  <div class="kpi-icon"><i class="bi bi-wallet2"></i></div>
+                  <span class="trend positive"><i class="bi bi-arrow-up"></i> 8%</span>
+                </div>
+                <p class="kpi-label">Total Collection</p>
+                <h3>₹18,64,000</h3>
+                <div class="kpi-footer"><span>vs last month</span><i class="bi bi-three-dots"></i></div>
+                <div class="mini-sparkline"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="kpi-card card border-0 kpi-violet h-100">
+              <div class="card-body">
+                <div class="kpi-top">
+                  <div class="kpi-icon"><i class="bi bi-receipt-cutoff"></i></div>
+                  <span class="trend positive"><i class="bi bi-arrow-up"></i> 14%</span>
+                </div>
+                <p class="kpi-label">Total Orders</p>
+                <h3>328</h3>
+                <div class="kpi-footer"><span>vs last month</span><i class="bi bi-three-dots"></i></div>
+                <div class="mini-sparkline"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="kpi-card card border-0 kpi-orange h-100">
+              <div class="card-body">
+                <div class="kpi-top">
+                  <div class="kpi-icon"><i class="bi bi-box-seam"></i></div>
+                  <span class="trend positive"><i class="bi bi-arrow-up"></i> 10%</span>
+                </div>
+                <p class="kpi-label">Items Sold</p>
+                <h3>42,580</h3>
+                <div class="kpi-footer"><span>vs last month</span><i class="bi bi-three-dots"></i></div>
+                <div class="mini-sparkline"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Secondary KPI strip -->
+        <section class="row g-3 mb-4">
+          <div class="col-12 col-md-4">
+            <div class="metric-card card border-0">
+              <div class="metric-icon teal"><i class="bi bi-people"></i></div>
+              <div><span>Active Customers</span><strong>1,248</strong><small class="text-success"><i class="bi bi-arrow-up"></i> 6% from last month</small></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="metric-card card border-0">
+              <div class="metric-icon red"><i class="bi bi-exclamation-triangle"></i></div>
+              <div><span>Low Stock Items</span><strong>7</strong><small class="text-danger">Need reorder attention</small></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="metric-card card border-0">
+              <div class="metric-icon amber"><i class="bi bi-clock-history"></i></div>
+              <div><span>Outstanding Receivables</span><strong>₹9,84,500</strong><small class="text-warning-emphasis">42 invoices overdue</small></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sales trend + category -->
+        <section class="row g-3 mb-4">
+          <div class="col-12 col-xl-8">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div>
+                  <h5>Sales & Collection Trend</h5>
+                  <p>Daily performance for the selected period</p>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="legend-item"><span class="legend-dot sales"></span>Sales</div>
+                  <div class="legend-item"><span class="legend-dot collection"></span>Collection</div>
+                  <select class="form-select form-select-sm chart-select">
+                    <option>Daily</option><option>Weekly</option><option>Monthly</option>
+                  </select>
+                </div>
+              </div>
+              <div class="card-body chart-body">
+                <canvas id="salesTrendChart" height="115"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div><h5>Sales by Category</h5><p>Contribution to total sales</p></div>
+                <button class="btn btn-link btn-sm p-0">View all</button>
+              </div>
+              <div class="card-body category-body">
+                <div class="donut-wrap">
+                  <canvas id="categoryChart"></canvas>
+                  <div class="donut-center"><strong>₹24.85L</strong><span>Total Sales</span></div>
+                </div>
+                <div class="category-list">
+                  <div><span><i class="cat-dot c1"></i>Puttu Podi</span><strong>28%</strong></div>
+                  <div><span><i class="cat-dot c2"></i>Masalas</span><strong>22%</strong></div>
+                  <div><span><i class="cat-dot c3"></i>Pickles</span><strong>15%</strong></div>
+                  <div><span><i class="cat-dot c4"></i>Tea & Coffee</span><strong>12%</strong></div>
+                  <div><span><i class="cat-dot c5"></i>Snacks</span><strong>10%</strong></div>
+                  <div><span><i class="cat-dot c6"></i>Others</span><strong>13%</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tables -->
+        <section class="row g-3 mb-4">
+          <div class="col-12 col-xl-4">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div><h5>Top 10 Products</h5><p>By sales value</p></div>
+                <a href="sales-reports.html" class="small-link">View All</a>
+              </div>
+              <div class="table-responsive">
+                <table class="table dashboard-table align-middle mb-0">
+                  <thead><tr><th>#</th><th>Product</th><th>Qty</th><th class="text-end">Sales</th></tr></thead>
+                  <tbody>
+                    <tr><td>01</td><td><strong>White Puttu Podi 500g</strong></td><td>8,250</td><td class="text-end">₹4,12,500</td></tr>
+                    <tr><td>02</td><td><strong>Chicken Masala 100g</strong></td><td>6,480</td><td class="text-end">₹2,26,800</td></tr>
+                    <tr><td>03</td><td><strong>Ragi Puttu Podi 500g</strong></td><td>5,120</td><td class="text-end">₹2,04,800</td></tr>
+                    <tr><td>04</td><td><strong>Fish Masala 100g</strong></td><td>4,980</td><td class="text-end">₹1,74,300</td></tr>
+                    <tr><td>05</td><td><strong>Pathiri Podi 500g</strong></td><td>3,960</td><td class="text-end">₹1,58,400</td></tr>
+                    <tr><td>06</td><td><strong>Lemon Pickle 400g</strong></td><td>3,250</td><td class="text-end">₹1,13,750</td></tr>
+                    <tr><td>07</td><td><strong>Meat Masala 100g</strong></td><td>3,100</td><td class="text-end">₹1,08,500</td></tr>
+                    <tr><td>08</td><td><strong>Biriyani Masala 100g</strong></td><td>2,980</td><td class="text-end">₹1,04,300</td></tr>
+                    <tr><td>09</td><td><strong>Wayanad Tea 250g</strong></td><td>2,750</td><td class="text-end">₹96,250</td></tr>
+                    <tr><td>10</td><td><strong>Masala Coffee 200g</strong></td><td>2,480</td><td class="text-end">₹84,300</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div><h5>Sales by Region</h5><p>Regional performance</p></div>
+                <a href="sales-reports.html" class="small-link">View Details</a>
+              </div>
+              <div class="card-body">
+                <div class="kerala-report-layout">
+                  <div class="kerala-map-wrap">
+                    <svg class="kerala-map" viewBox="0 0 220 500" role="group" aria-label="Interactive Kerala district sales map">
+                      <path class="district-shape sales-level-3" data-district="Kasaragod" data-sales="142800" data-orders="286" data-outlets="184" d="M75 15 Q111 8 151 17 L164 40 L154 66 L67 67 L54 45 Z" tabindex="0" role="button" aria-label="Kasaragod district sales ₹1,42,800"><title>Kasaragod · ₹1,42,800</title></path>
+                      <path class="district-shape sales-level-5" data-district="Kannur" data-sales="624000" data-orders="1108" data-outlets="642" d="M54 45 L67 67 L154 66 L150 91 L132 113 L54 111 L44 82 Z" tabindex="0" role="button" aria-label="Kannur district sales ₹6,24,000"><title>Kannur · ₹6,24,000</title></path>
+                      <path class="district-shape sales-level-3" data-district="Wayanad" data-sales="285400" data-orders="492" data-outlets="275" d="M132 113 L150 91 L171 85 L190 101 L183 132 L160 151 L133 145 Z" tabindex="0" role="button" aria-label="Wayanad district sales ₹2,85,400"><title>Wayanad · ₹2,85,400</title></path>
+                      <path class="district-shape sales-level-4" data-district="Kozhikode" data-sales="418500" data-orders="836" data-outlets="508" d="M54 111 L132 113 L133 145 L121 163 L48 164 L42 139 Z" tabindex="0" role="button" aria-label="Kozhikode district sales ₹4,18,500"><title>Kozhikode · ₹4,18,500</title></path>
+                      <path class="district-shape sales-level-4" data-district="Malappuram" data-sales="396200" data-orders="784" data-outlets="471" d="M48 164 L121 163 L132 145 L146 166 L132 199 L123 215 L51 211 L44 187 Z" tabindex="0" role="button" aria-label="Malappuram district sales ₹3,96,200"><title>Malappuram · ₹3,96,200</title></path>
+                      <path class="district-shape sales-level-3" data-district="Palakkad" data-sales="319700" data-orders="618" data-outlets="362" d="M123 215 L132 199 L146 166 L167 177 L190 202 L177 233 L146 244 L128 234 Z" tabindex="0" role="button" aria-label="Palakkad district sales ₹3,19,700"><title>Palakkad · ₹3,19,700</title></path>
+                      <path class="district-shape sales-level-3" data-district="Thrissur" data-sales="224600" data-orders="512" data-outlets="316" d="M51 211 L123 215 L128 234 L146 244 L134 267 L116 279 L56 265 L49 240 Z" tabindex="0" role="button" aria-label="Thrissur district sales ₹2,24,600"><title>Thrissur · ₹2,24,600</title></path>
+                      <path class="district-shape sales-level-2" data-district="Ernakulam" data-sales="168300" data-orders="428" data-outlets="284" d="M56 265 L116 279 L134 267 L144 286 L130 313 L114 324 L58 311 L52 286 Z" tabindex="0" role="button" aria-label="Ernakulam district sales ₹1,68,300"><title>Ernakulam · ₹1,68,300</title></path>
+                      <path class="district-shape sales-level-2" data-district="Idukki" data-sales="145900" data-orders="318" data-outlets="206" d="M130 313 L144 286 L166 279 L180 301 L174 334 L157 363 L134 370 L119 349 L114 324 Z" tabindex="0" role="button" aria-label="Idukki district sales ₹1,45,900"><title>Idukki · ₹1,45,900</title></path>
+                      <path class="district-shape sales-level-2" data-district="Alappuzha" data-sales="118700" data-orders="366" data-outlets="242" d="M58 311 L114 324 L119 349 L111 373 L61 366 L55 341 Z" tabindex="0" role="button" aria-label="Alappuzha district sales ₹1,18,700"><title>Alappuzha · ₹1,18,700</title></path>
+                      <path class="district-shape sales-level-2" data-district="Kottayam" data-sales="132400" data-orders="294" data-outlets="193" d="M111 373 L119 349 L134 370 L144 389 L131 411 L113 418 L98 397 Z" tabindex="0" role="button" aria-label="Kottayam district sales ₹1,32,400"><title>Kottayam · ₹1,32,400</title></path>
+                      <path class="district-shape sales-level-1" data-district="Pathanamthitta" data-sales="96300" data-orders="212" data-outlets="148" d="M131 411 L144 389 L157 363 L174 375 L169 405 L148 431 L132 445 L113 430 L113 418 Z" tabindex="0" role="button" aria-label="Pathanamthitta district sales ₹96,300"><title>Pathanamthitta · ₹96,300</title></path>
+                      <path class="district-shape sales-level-2" data-district="Kollam" data-sales="152800" data-orders="382" data-outlets="251" d="M61 366 L111 373 L98 397 L113 418 L113 430 L102 452 L71 445 L58 421 L55 393 Z" tabindex="0" role="button" aria-label="Kollam district sales ₹1,52,800"><title>Kollam · ₹1,52,800</title></path>
+                      <path class="district-shape sales-level-2" data-district="Thiruvananthapuram" data-sales="192500" data-orders="476" data-outlets="328" d="M71 445 L102 452 L113 430 L132 445 L141 466 L128 486 L101 492 L78 477 L65 459 Z" tabindex="0" role="button" aria-label="Thiruvananthapuram district sales ₹1,92,500"><title>Thiruvananthapuram · ₹1,92,500</title></path>
+                    </svg>
+                    <div class="kerala-map-tooltip" data-district-tooltip role="status" aria-live="polite" hidden></div>
+                    <div class="kerala-map-legend"><span></span>Sales by district</div>
+                  </div>
+                  <div class="district-report" aria-live="polite">
+                    <span class="detail-eyebrow">Selected district</span>
+                    <h6 data-district-name>Kannur</h6>
+                    <strong class="district-sales-value" data-district-sales>₹6,24,000</strong>
+                    <div class="district-report-stat"><span>Orders</span><strong data-district-orders>1,108</strong></div>
+                    <div class="district-report-stat"><span>Active outlets</span><strong data-district-outlets>642</strong></div>
+                    <small class="district-report-hint">Click a district to view its report</small>
+                    <a href="sales-reports.html" class="small-link">Open sales report <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div><h5>Channel Wise Sales</h5><p>Sales distribution</p></div>
+              </div>
+              <div class="card-body">
+                <div class="channel-list">
+                  <div class="channel-item"><div class="channel-head"><span>Retail Shops</span><strong>45%</strong></div><div class="channel-track"><span style="width:45%"></span></div><small>₹11,18,250</small></div>
+                  <div class="channel-item"><div class="channel-head"><span>Super Markets</span><strong>20%</strong></div><div class="channel-track blue"><span style="width:20%"></span></div><small>₹4,97,000</small></div>
+                  <div class="channel-item"><div class="channel-head"><span>Wholesalers</span><strong>15%</strong></div><div class="channel-track orange"><span style="width:15%"></span></div><small>₹3,72,800</small></div>
+                  <div class="channel-item"><div class="channel-head"><span>Institutions</span><strong>10%</strong></div><div class="channel-track violet"><span style="width:10%"></span></div><small>₹2,48,500</small></div>
+                  <div class="channel-item"><div class="channel-head"><span>Others</span><strong>10%</strong></div><div class="channel-track gray"><span style="width:10%"></span></div><small>₹2,48,450</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Van performance + stock -->
+        <section class="row g-3 mb-4">
+          <div class="col-12 col-xl-7">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div><h5>Van Sales Performance</h5><p>Salesperson and route performance</p></div>
+                <a href="salesperson-performance.html" class="small-link">View All</a>
+              </div>
+              <div class="table-responsive">
+                <table class="table dashboard-table align-middle mb-0">
+                  <thead><tr><th>#</th><th>Van No.</th><th>Salesman</th><th>Sales</th><th>Orders</th><th>Collection</th><th>Target</th></tr></thead>
+                  <tbody>
+                    <tr><td>01</td><td><strong>KL 13 AB 1234</strong></td><td>Akhil</td><td>₹4,82,000</td><td>68</td><td>₹3,96,000</td><td><span class="target-badge good">112%</span></td></tr>
+                    <tr><td>02</td><td><strong>KL 13 CD 5678</strong></td><td>Sajith</td><td>₹3,96,500</td><td>52</td><td>₹3,12,000</td><td><span class="target-badge good">98%</span></td></tr>
+                    <tr><td>03</td><td><strong>KL 59 EF 9012</strong></td><td>Ramees</td><td>₹3,84,200</td><td>48</td><td>₹2,96,400</td><td><span class="target-badge average">96%</span></td></tr>
+                    <tr><td>04</td><td><strong>KL 13 GH 3456</strong></td><td>Vijay</td><td>₹3,16,800</td><td>42</td><td>₹2,48,600</td><td><span class="target-badge warning">90%</span></td></tr>
+                    <tr><td>05</td><td><strong>KL 59 IJ 7890</strong></td><td>Nishu</td><td>₹2,78,500</td><td>36</td><td>₹2,14,300</td><td><span class="target-badge danger">85%</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-5">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div><h5>Factory Stock Status</h5><p>Current inventory position</p></div>
+                <span class="small-link" aria-disabled="true">View All</span>
+              </div>
+              <div class="stock-summary">
+                <div><span>Total Items</span><strong>142</strong></div>
+                <div><span>In Stock</span><strong class="text-success">128</strong></div>
+                <div><span>Low Stock</span><strong class="text-warning">7</strong></div>
+                <div><span>Out of Stock</span><strong class="text-danger">2</strong></div>
+              </div>
+              <div class="table-responsive">
+                <table class="table dashboard-table align-middle mb-0">
+                  <thead><tr><th>Product</th><th>Stock</th><th>Reorder</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>Chicken Masala 100g</td><td>320</td><td>100</td><td><span class="status-pill success"><i></i>OK</span></td></tr>
+                    <tr><td>Fish Masala 100g</td><td>210</td><td>100</td><td><span class="status-pill success"><i></i>OK</span></td></tr>
+                    <tr><td>Lemon Pickle 400g</td><td>420</td><td>100</td><td><span class="status-pill success"><i></i>OK</span></td></tr>
+                    <tr><td>Meat Masala 100g</td><td class="text-danger fw-bold">45</td><td>100</td><td><span class="status-pill warning"><i></i>Low</span></td></tr>
+                    <tr><td>Biriyani Masala 100g</td><td>180</td><td>100</td><td><span class="status-pill success"><i></i>OK</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Expiry + quick reports -->
+        <section class="row g-3 mb-4">
+          <div class="col-12 col-xl-7">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div><h5>Expiry Report <span class="header-chip">Next 60 Days</span></h5><p>Products approaching expiry</p></div>
+                <span class="small-link" aria-disabled="true">View All</span>
+              </div>
+              <div class="table-responsive">
+                <table class="table dashboard-table align-middle mb-0">
+                  <thead><tr><th>#</th><th>Product</th><th>Batch No.</th><th>Expiry Date</th><th>Qty</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>01</td><td><strong>Fish Masala 100g</strong></td><td>FP20260301</td><td>15-10-2026</td><td>320</td><td><span class="expiry-pill urgent">19 days</span></td></tr>
+                    <tr><td>02</td><td><strong>Meat Masala 100g</strong></td><td>FP20260305</td><td>20-10-2026</td><td>150</td><td><span class="expiry-pill urgent">24 days</span></td></tr>
+                    <tr><td>03</td><td><strong>Lemon Pickle 400g</strong></td><td>FP20260308</td><td>05-11-2026</td><td>420</td><td><span class="expiry-pill soon">40 days</span></td></tr>
+                    <tr><td>04</td><td><strong>Chicken Masala 100g</strong></td><td>FP20260310</td><td>12-11-2026</td><td>180</td><td><span class="expiry-pill soon">47 days</span></td></tr>
+                    <tr><td>05</td><td><strong>White Puttu Podi 500g</strong></td><td>FP20260312</td><td>18-11-2026</td><td>250</td><td><span class="expiry-pill normal">53 days</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-5">
+            <div class="dashboard-card card border-0 h-100">
+              <div class="card-header">
+                <div><h5>Quick Reports</h5><p>Frequently used reports</p></div>
+                <button class="btn btn-icon-sm" title="Customize"><i class="bi bi-sliders"></i></button>
+              </div>
+              <div class="card-body">
+                <div class="quick-reports-grid">
+                  <a href="sales-reports.html" class="quick-report"><span class="quick-icon green"><i class="bi bi-graph-up-arrow"></i></span><span><strong>Sales Report</strong><small>Daily / Monthly / Customer</small></span><i class="bi bi-chevron-right"></i></a>
+                  <span class="quick-report"><span class="quick-icon teal"><i class="bi bi-people"></i></span><span><strong>Customer Report</strong><small>Active / Inactive / Outstanding</small></span><i class="bi bi-chevron-right"></i></span>
+                  <a href="customer-payments.html" class="quick-report"><span class="quick-icon blue"><i class="bi bi-wallet2"></i></span><span><strong>Collection Report</strong><small>Cash / Card / UPI / Credit</small></span><i class="bi bi-chevron-right"></i></a>
+                  <span class="quick-report"><span class="quick-icon red"><i class="bi bi-calendar-x"></i></span><span><strong>Expiry Report</strong><small>Near Expiry / Expired</small></span><i class="bi bi-chevron-right"></i></span>
+                  <span class="quick-report"><span class="quick-icon orange"><i class="bi bi-box-seam"></i></span><span><strong>Stock Report</strong><small>Current Stock / Low Stock</small></span><i class="bi bi-chevron-right"></i></span>
+                  <span class="quick-report"><span class="quick-icon purple"><i class="bi bi-arrow-left-right"></i></span><span><strong>Product Movement</strong><small>Fast / Slow Moving</small></span><i class="bi bi-chevron-right"></i></span>
+                  <a href="salesperson-performance.html" class="quick-report"><span class="quick-icon violet"><i class="bi bi-truck"></i></span><span><strong>Van Sales Report</strong><small>Van wise / Route wise</small></span><i class="bi bi-chevron-right"></i></a>
+                  <a href="sales-reports.html" class="quick-report"><span class="quick-icon slate"><i class="bi bi-file-earmark-arrow-down"></i></span><span><strong>Download Reports</strong><small>PDF / Excel / Print</small></span><i class="bi bi-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        
+      <section class="dashboard-section mt-3">
+        <div class="section-heading">
+          <div>
+            <h3>Business Performance</h3>
+            <p>Additional operational comparisons across sales, collections and products.</p>
+          </div>
+          <button class="btn btn-sm btn-soft" type="button">View Analytics <i class="bi bi-arrow-right ms-1"></i></button>
+        </div>
+
+        <div class="chart-grid-3">
+          <div class="dashboard-card mini-chart-card">
+            <div class="card-header">
+              <div><h5>Sales by Channel</h5><p>Current month</p></div>
+              <i class="bi bi-bar-chart-line"></i>
+            </div>
+            <div class="mini-chart"><canvas id="salesChannelBar"></canvas></div>
+          </div>
+
+          <div class="dashboard-card mini-chart-card">
+            <div class="card-header">
+              <div><h5>Collections by Payment Mode</h5><p>Current month</p></div>
+              <i class="bi bi-wallet2"></i>
+            </div>
+            <div class="mini-chart"><canvas id="collectionModeBar"></canvas></div>
+          </div>
+
+          <div class="dashboard-card mini-chart-card">
+            <div class="card-header">
+              <div><h5>Top Product Categories</h5><p>Units sold</p></div>
+              <i class="bi bi-box-seam"></i>
+            </div>
+            <div class="mini-chart"><canvas id="categoryUnitsBar"></canvas></div>
+          </div>
+        </div>
+      </section>
+
+<footer class="app-footer">
+          <span>Food CRM Dashboard</span>
+          <span>© 2026 · All rights reserved</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+  <script src="assets/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</body>
+</html>
