@@ -266,6 +266,10 @@
 .color-blue { background: #1769aa; }
 .color-teal { background: #0b7b5d; }
 .color-indigo { background: #5540a8; }
+.color-green { background: #16834a; }
+.color-red { background: #c73543; }
+.color-purple { background: #7b45b5; }
+.color-orange { background: #d46a16; }
 
 .form-switch .form-check-input {
   width: 2.5em;

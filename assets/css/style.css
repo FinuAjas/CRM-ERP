@@ -1458,6 +1458,10 @@ html[data-accent="navy"] { --primary: #0b4f8a; --primary-2: #1469ad; }
 html[data-accent="blue"] { --primary: #1769aa; --primary-2: #3d8fd0; }
 html[data-accent="teal"] { --primary: #0b7b5d; --primary-2: #14956f; }
 html[data-accent="indigo"] { --primary: #5540a8; --primary-2: #6f57c8; }
+html[data-accent="green"] { --primary: #16834a; --primary-2: #24a35f; }
+html[data-accent="red"] { --primary: #c73543; --primary-2: #e04c5a; }
+html[data-accent="purple"] { --primary: #7b45b5; --primary-2: #965fce; }
+html[data-accent="orange"] { --primary: #d46a16; --primary-2: #eb872f; }
 
 .brand-mark {
   background: linear-gradient(135deg, var(--primary-2), var(--primary));
