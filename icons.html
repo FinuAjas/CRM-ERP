@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Modern Food Retail CRM Dashboard">
-  <title>Transaction Details · Food CRM</title>
+  <meta name="description" content="Searchable Bootstrap Icons reference library for the Food CRM interface.">
+  <title>Icons · Food CRM</title>
 
   <!-- Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +17,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reference-pages.css">
   <script src="assets/js/preferences.js"></script>
-</head><body data-crm-template="transaction-details">
+</head><body data-crm-page="icons.html">
   <div class="app-shell">
 
     <!-- Mobile backdrop -->
@@ -43,7 +44,7 @@
         <div class="nav-section-label">MAIN MENU</div>
         <nav class="nav flex-column app-nav">
 
-          <a class="nav-link active" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+          <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
 
           <div class="nav-dropdown">
             <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#salesMenu" aria-expanded="false">
@@ -58,11 +59,11 @@
           </div>
 
           <div class="nav-dropdown">
-            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#vanSalesMenu" aria-expanded="false">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#vanSalesMenu" aria-expanded="true">
               <i class="bi bi-truck"></i><span>Van Sales</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="vanSalesMenu">
-              <a class="nav-sublink" href="van-dashboard.html">Van Dashboard</a>
+            <div class="collapse nav-submenu show" id="vanSalesMenu">
+              <a class="nav-sublink" href="van-dashboard.html" aria-current="page">Van Dashboard</a>
               <a class="nav-sublink" href="van-details.html">Van Details</a>
               <a class="nav-sublink" href="van-sales-entry.html">Van Sales Entry</a>
               <a class="nav-sublink" href="van-stock.html">Van Stock</a>
@@ -315,7 +316,7 @@
           <a class="nav-link" href="settings.html"><i class="bi bi-sliders2"></i><span>Settings</span></a>
 
           <div class="nav-section-label mt-3">EXTRA</div>
-          <a class="nav-link" href="icons.html"><i class="bi bi-stars"></i><span>Icons</span></a>
+          <a class="nav-link active" href="icons.html" aria-current="page"><i class="bi bi-stars"></i><span>Icons</span></a>
         </nav>
       </div>
 
@@ -340,8 +341,8 @@
             <i class="bi bi-list"></i>
           </button>
           <div class="breadcrumb-wrap">
-            <span class="eyebrow" data-context-module>Inventory</span>
-            <h1 class="page-title mb-0">Purchase order details</h1>
+            <span class="eyebrow">Extra</span>
+            <h1 class="page-title mb-0">Icons</h1>
           </div>
         </div>
 
@@ -425,4 +426,51 @@
         </div>
       </header>
 
-      <div class="content-area"><section class="page-intro"><div><h2>Purchase order details</h2><p>Sample order, supplier and payment summary.</p></div><div class="d-flex gap-2"><button class="btn btn-soft" type="button" onclick="window.print()">Print</button><a class="btn btn-primary" href="transaction-form.html?module=Purchases&amp;entity=Purchase%20Order">Edit order</a></div></section><section class="dashboard-card mb-3"><div class="detail-banner"><div><span class="detail-eyebrow">Purchases · Created 18 Sep 2026</span><h3>PO-2026-1924</h3><p>Due 30 Sep 2026 · Requested by Anjali Menon</p></div><span class="status-pill status-warning">Pending approval</span></div><div class="card-body row g-3"><div class="col-md-3"><span class="detail-eyebrow">Supplier</span><strong class="d-block">Malabar Mills Co.</strong></div><div class="col-md-3"><span class="detail-eyebrow">Ship to</span><strong class="d-block">Head Office Warehouse</strong></div><div class="col-md-3"><span class="detail-eyebrow">Payment status</span><strong class="d-block">Partially paid</strong></div><div class="col-md-3"><span class="detail-eyebrow">Reference</span><strong class="d-block">PO-2026-1924</strong></div></div></section><div class="row g-3"><div class="col-xl-8"><section class="dashboard-card"><div class="card-header"><h5>Line items</h5></div><div class="table-responsive"><table class="table dashboard-table"><thead><tr><th>Product</th><th>Qty</th><th>Price</th><th>Tax</th><th>Total</th></tr></thead><tbody><tr><td>Malabar Puttu Podi 1kg</td><td>300</td><td>₹ 104.00</td><td>5%</td><td>₹ 32,760.00</td></tr><tr><td>Kerala Garam Masala 200g</td><td>120</td><td>₹ 68.00</td><td>5%</td><td>₹ 8,568.00</td></tr></tbody></table></div></section></div><div class="col-xl-4"><section class="dashboard-card"><div class="card-header"><h5>Payment summary</h5></div><div class="card-body"><div class="summary-line"><span>Subtotal</span><strong>₹ 41,040.00</strong></div><div class="summary-line"><span>Tax</span><strong>₹ 2,052.00</strong></div><div class="summary-line grand-total"><span>Grand total</span><strong>₹ 43,092.00</strong></div><div class="summary-line"><span>Paid</span><strong>₹ 25,000.00</strong></div><div class="summary-line"><span>Balance</span><strong>₹ 18,092.00</strong></div></div></section></div></div><footer class="app-footer"><span>Food CRM</span><span>© 2026 · Reusable module templates</span></footer></div></main></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script><script src="assets/js/app.js"></script></body></html>
+      <div class="content-area reference-page">
+        <section class="page-intro"><div><span class="reference-kicker">Component library</span><h2>Icon library</h2><p>Browse Bootstrap Icons for navigation, commerce, operations, and common interface actions.</p></div><span class="status-pill status-success"><i class="bi bi-stars me-1"></i>Bootstrap Icons</span></section>
+        <section class="dashboard-card"><div class="card-header"><div><h5>Browse icons</h5><p>Search by name or category. Select a tile to copy its class name.</p></div><span class="text-muted small">Click an icon to copy its class</span></div><div class="reference-toolbar"><div class="toolbar-controls flex-grow-1"><div class="input-group" style="max-width:460px"><span class="input-group-text"><i class="bi bi-search"></i></span><input class="form-control" id="iconSearch" type="search" placeholder="Search icons, e.g. truck, chart, person" aria-label="Search icons"></div></div><span class="small text-muted"><strong id="iconCount">0</strong> shown</span></div>
+          <div class="card-body pt-0">
+            <h6 class="icon-category">Navigation &amp; interface</h6><div class="icon-gallery">
+              <button class="icon-tile" data-icon-name="grid"><i class="bi bi-grid"></i><span>grid</span></button><button class="icon-tile" data-icon-name="house"><i class="bi bi-house"></i><span>house</span></button><button class="icon-tile" data-icon-name="list"><i class="bi bi-list"></i><span>list</span></button><button class="icon-tile" data-icon-name="search"><i class="bi bi-search"></i><span>search</span></button><button class="icon-tile" data-icon-name="funnel filter"><i class="bi bi-funnel"></i><span>funnel</span></button><button class="icon-tile" data-icon-name="sliders settings"><i class="bi bi-sliders"></i><span>sliders</span></button><button class="icon-tile" data-icon-name="bell notification"><i class="bi bi-bell"></i><span>bell</span></button><button class="icon-tile" data-icon-name="calendar"><i class="bi bi-calendar3"></i><span>calendar3</span></button><button class="icon-tile" data-icon-name="clock"><i class="bi bi-clock"></i><span>clock</span></button><button class="icon-tile" data-icon-name="gear"><i class="bi bi-gear"></i><span>gear</span></button><button class="icon-tile" data-icon-name="moon dark"><i class="bi bi-moon-stars"></i><span>moon-stars</span></button><button class="icon-tile" data-icon-name="sun light"><i class="bi bi-sun"></i><span>sun</span></button><button class="icon-tile" data-icon-name="dots more"><i class="bi bi-three-dots"></i><span>three-dots</span></button><button class="icon-tile" data-icon-name="arrow right"><i class="bi bi-arrow-right"></i><span>arrow-right</span></button><button class="icon-tile" data-icon-name="download"><i class="bi bi-download"></i><span>download</span></button><button class="icon-tile" data-icon-name="upload"><i class="bi bi-upload"></i><span>upload</span></button>
+            </div>
+            <h6 class="icon-category">People &amp; accounts</h6><div class="icon-gallery">
+              <button class="icon-tile" data-icon-name="person"><i class="bi bi-person"></i><span>person</span></button><button class="icon-tile" data-icon-name="people users"><i class="bi bi-people"></i><span>people</span></button><button class="icon-tile" data-icon-name="person badge"><i class="bi bi-person-badge"></i><span>person-badge</span></button><button class="icon-tile" data-icon-name="person gear"><i class="bi bi-person-gear"></i><span>person-gear</span></button><button class="icon-tile" data-icon-name="building"><i class="bi bi-building"></i><span>building</span></button><button class="icon-tile" data-icon-name="shop store"><i class="bi bi-shop"></i><span>shop</span></button><button class="icon-tile" data-icon-name="chat"><i class="bi bi-chat-dots"></i><span>chat-dots</span></button><button class="icon-tile" data-icon-name="headset support"><i class="bi bi-headset"></i><span>headset</span></button><button class="icon-tile" data-icon-name="envelope mail"><i class="bi bi-envelope"></i><span>envelope</span></button><button class="icon-tile" data-icon-name="telephone phone"><i class="bi bi-telephone"></i><span>telephone</span></button><button class="icon-tile" data-icon-name="shield lock"><i class="bi bi-shield-lock"></i><span>shield-lock</span></button><button class="icon-tile" data-icon-name="key"><i class="bi bi-key"></i><span>key</span></button>
+            </div>
+            <h6 class="icon-category">Commerce &amp; finance</h6><div class="icon-gallery">
+              <button class="icon-tile" data-icon-name="cart sales"><i class="bi bi-cart3"></i><span>cart3</span></button><button class="icon-tile" data-icon-name="basket"><i class="bi bi-basket"></i><span>basket</span></button><button class="icon-tile" data-icon-name="bag"><i class="bi bi-bag"></i><span>bag</span></button><button class="icon-tile" data-icon-name="receipt invoice"><i class="bi bi-receipt"></i><span>receipt</span></button><button class="icon-tile" data-icon-name="credit card"><i class="bi bi-credit-card"></i><span>credit-card</span></button><button class="icon-tile" data-icon-name="cash money"><i class="bi bi-cash-stack"></i><span>cash-stack</span></button><button class="icon-tile" data-icon-name="currency rupee"><i class="bi bi-currency-rupee"></i><span>currency-rupee</span></button><button class="icon-tile" data-icon-name="bank"><i class="bi bi-bank"></i><span>bank</span></button><button class="icon-tile" data-icon-name="wallet"><i class="bi bi-wallet2"></i><span>wallet2</span></button><button class="icon-tile" data-icon-name="tag"><i class="bi bi-tag"></i><span>tag</span></button><button class="icon-tile" data-icon-name="percent discount"><i class="bi bi-percent"></i><span>percent</span></button><button class="icon-tile" data-icon-name="graph chart"><i class="bi bi-graph-up-arrow"></i><span>graph-up-arrow</span></button><button class="icon-tile" data-icon-name="calculator"><i class="bi bi-calculator"></i><span>calculator</span></button><button class="icon-tile" data-icon-name="spreadsheet"><i class="bi bi-file-earmark-spreadsheet"></i><span>file-earmark-spreadsheet</span></button>
+            </div>
+            <h6 class="icon-category">Inventory, logistics &amp; operations</h6><div class="icon-gallery">
+              <button class="icon-tile" data-icon-name="box package inventory"><i class="bi bi-box-seam"></i><span>box-seam</span></button><button class="icon-tile" data-icon-name="boxes"><i class="bi bi-boxes"></i><span>boxes</span></button><button class="icon-tile" data-icon-name="truck van delivery"><i class="bi bi-truck"></i><span>truck</span></button><button class="icon-tile" data-icon-name="geo map location"><i class="bi bi-geo-alt"></i><span>geo-alt</span></button><button class="icon-tile" data-icon-name="map route"><i class="bi bi-map"></i><span>map</span></button><button class="icon-tile" data-icon-name="pin"><i class="bi bi-geo-alt-fill"></i><span>geo-alt-fill</span></button><button class="icon-tile" data-icon-name="compass"><i class="bi bi-compass"></i><span>compass</span></button><button class="icon-tile" data-icon-name="fuel"><i class="bi bi-fuel-pump"></i><span>fuel-pump</span></button><button class="icon-tile" data-icon-name="tools wrench"><i class="bi bi-tools"></i><span>tools</span></button><button class="icon-tile" data-icon-name="barcode"><i class="bi bi-upc-scan"></i><span>upc-scan</span></button><button class="icon-tile" data-icon-name="clipboard check"><i class="bi bi-clipboard-check"></i><span>clipboard-check</span></button><button class="icon-tile" data-icon-name="repeat"><i class="bi bi-arrow-repeat"></i><span>arrow-repeat</span></button><button class="icon-tile" data-icon-name="lightning"><i class="bi bi-lightning-charge"></i><span>lightning-charge</span></button><button class="icon-tile" data-icon-name="wrench adjustable"><i class="bi bi-wrench-adjustable"></i><span>wrench-adjustable</span></button>
+            </div>
+            <h6 class="icon-category">Status, security &amp; files</h6><div class="icon-gallery">
+              <button class="icon-tile" data-icon-name="check success"><i class="bi bi-check-circle"></i><span>check-circle</span></button><button class="icon-tile" data-icon-name="warning alert"><i class="bi bi-exclamation-triangle"></i><span>exclamation-triangle</span></button><button class="icon-tile" data-icon-name="info"><i class="bi bi-info-circle"></i><span>info-circle</span></button><button class="icon-tile" data-icon-name="x close error"><i class="bi bi-x-circle"></i><span>x-circle</span></button><button class="icon-tile" data-icon-name="star favorite"><i class="bi bi-star"></i><span>star</span></button><button class="icon-tile" data-icon-name="heart"><i class="bi bi-heart"></i><span>heart</span></button><button class="icon-tile" data-icon-name="flag"><i class="bi bi-flag"></i><span>flag</span></button><button class="icon-tile" data-icon-name="lock"><i class="bi bi-lock"></i><span>lock</span></button><button class="icon-tile" data-icon-name="file text"><i class="bi bi-file-earmark-text"></i><span>file-earmark-text</span></button><button class="icon-tile" data-icon-name="folder"><i class="bi bi-folder2-open"></i><span>folder2-open</span></button><button class="icon-tile" data-icon-name="image photo"><i class="bi bi-image"></i><span>image</span></button><button class="icon-tile" data-icon-name="printer"><i class="bi bi-printer"></i><span>printer</span></button><button class="icon-tile" data-icon-name="cloud upload"><i class="bi bi-cloud-arrow-up"></i><span>cloud-arrow-up</span></button><button class="icon-tile" data-icon-name="link"><i class="bi bi-link-45deg"></i><span>link-45deg</span></button><button class="icon-tile" data-icon-name="copy"><i class="bi bi-copy"></i><span>copy</span></button><button class="icon-tile" data-icon-name="trash delete"><i class="bi bi-trash3"></i><span>trash3</span></button>
+            </div><div class="reference-empty" id="iconEmpty">No icons match your search.</div><div class="small text-muted mt-3">Class format: <code>bi bi-icon-name</code>. Confirm the icon exists in the installed Bootstrap Icons version before using it.</div>
+          </div>
+        </section>
+        <footer class="app-footer"><span>Food CRM · Component library</span><span>© 2026 · All rights reserved</span></footer>
+      </div>
+      <script>
+        (() => {
+          const search = document.getElementById('iconSearch');
+          const tiles = [...document.querySelectorAll('.icon-tile')];
+          const categories = [...document.querySelectorAll('.icon-category')];
+          const count = document.getElementById('iconCount');
+          const empty = document.getElementById('iconEmpty');
+          const update = () => {
+            const query = search.value.trim().toLowerCase();
+            let visible = 0;
+            tiles.forEach(tile => { const show = tile.dataset.iconName.includes(query); tile.hidden = !show; if (show) visible++; });
+            categories.forEach(category => { category.hidden = !category.nextElementSibling.querySelector('.icon-tile:not([hidden])'); });
+            count.textContent = visible;
+            empty.style.display = visible ? 'none' : 'block';
+          };
+          search.addEventListener('input', update);
+          tiles.forEach(tile => tile.addEventListener('click', async () => {
+            const className = `bi bi-${tile.querySelector('span').textContent}`;
+            try { await navigator.clipboard.writeText(className); tile.title = `Copied ${className}`; } catch { tile.title = className; }
+          }));
+          update();
+        })();
+      </script>
+
+    </main></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script><script src="assets/js/app.js"></script></body></html>
