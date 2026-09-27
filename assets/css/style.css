@@ -1696,6 +1696,33 @@ html[data-density="compact"] .content-area .row { --bs-gutter-y: 0.65rem; }
 .user-permissions-card .summary-line:last-child { border-bottom:0; }
 .user-permissions-card .summary-line > strong { white-space:normal; text-align:right; }
 .user-activity-card .activity-row { padding:3px 0 12px; }
+.user-details-layout { align-items:start; }
+.user-location-card > .card-body { padding:16px; }
+.location-demo-badge { display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px; color:#8a5a00; background:#fff4d8; font-size:10px; font-weight:700; }
+.location-demo-badge > span,.location-status-dot { width:7px; height:7px; flex:0 0 7px; border-radius:50%; background:#e3a321; }
+.location-map { position:relative; height:174px; overflow:hidden; border:1px solid var(--border); border-radius:10px; isolation:isolate; background-color:#e8f1e9; background-image:linear-gradient(30deg,transparent 48%,rgba(255,255,255,.8) 49%,rgba(255,255,255,.8) 52%,transparent 53%),linear-gradient(145deg,transparent 44%,rgba(255,255,255,.82) 45%,rgba(255,255,255,.82) 48%,transparent 49%),linear-gradient(90deg,rgba(153,194,151,.13) 1px,transparent 1px),linear-gradient(rgba(153,194,151,.13) 1px,transparent 1px); background-size:100% 100%,100% 100%,28px 28px,28px 28px; }
+.map-water { position:absolute; z-index:-1; width:43%; height:160%; top:-31%; right:-16%; transform:rotate(17deg); border-radius:45%; background:#c8e5ed; }
+.map-road { position:absolute; height:8px; border:2px solid #fff; border-inline:0; background:#d6c9a8; box-shadow:0 0 0 1px rgba(176,157,119,.15); }
+.map-road-one { width:122%; top:43%; left:-8%; transform:rotate(-17deg); }
+.map-road-two { width:105%; top:71%; left:-3%; transform:rotate(29deg); }
+.map-road-three { width:92%; top:18%; left:23%; transform:rotate(78deg); }
+.map-label { position:absolute; color:#65776b; font-size:9px; font-weight:600; text-shadow:0 1px 1px rgba(255,255,255,.9); }
+.map-label-one { top:24%; left:12%; }
+.map-label-two { right:13%; bottom:17%; }
+.location-pin { position:absolute; top:43%; left:49%; width:34px; height:34px; display:grid; place-items:center; border:3px solid #fff; border-radius:50% 50% 50% 0; transform:translate(-50%,-50%) rotate(-45deg); color:#fff; background:var(--primary); box-shadow:0 3px 10px rgba(10,35,60,.28); }
+.location-pin i { transform:rotate(45deg); font-size:15px; }
+.location-details { display:flex; align-items:flex-start; gap:10px; margin-top:15px; }
+.location-status-dot { margin-top:6px; background:#e3a321; }
+.location-details strong,.location-details small { display:block; }
+.location-details strong { color:var(--text); font-size:13px; }
+.location-details small { margin-top:3px; color:var(--muted); font-size:10px; line-height:1.5; overflow-wrap:anywhere; }
+.location-map-link { width:100%; justify-content:center; margin-top:14px; }
+.location-note { margin:10px 0 0; color:var(--muted); font-size:10px; line-height:1.5; text-align:center; }
+[data-bs-theme="dark"] .location-map { background-color:#20352e; background-image:linear-gradient(30deg,transparent 48%,rgba(225,236,226,.45) 49%,rgba(225,236,226,.45) 52%,transparent 53%),linear-gradient(145deg,transparent 44%,rgba(225,236,226,.45) 45%,rgba(225,236,226,.45) 48%,transparent 49%),linear-gradient(90deg,rgba(153,194,151,.1) 1px,transparent 1px),linear-gradient(rgba(153,194,151,.1) 1px,transparent 1px); }
+[data-bs-theme="dark"] .location-demo-badge { color:#f3ca73; background:rgba(227,163,33,.14); }
+/* Sales order details: keep card contents comfortably inset from card edges. */
+.sales-order-details-page .dashboard-card > .card-body { padding:20px 22px; }
+.sales-order-details-page .dashboard-card .activity-row { padding-inline:2px; }
 @media (max-width:575.98px) {
   .user-profile-card > .card-body,
   .user-permissions-card > .card-body,
@@ -1703,4 +1730,6 @@ html[data-density="compact"] .content-area .row { --bs-gutter-y: 0.65rem; }
   .user-profile-card .detail-banner { padding:16px; }
   .user-profile-facts { gap:14px 12px; }
   .user-profile-facts > div > strong { font-size:14px; }
+  .user-location-card > .card-body { padding:14px; }
+  .sales-order-details-page .dashboard-card > .card-body { padding:16px; }
 }
