@@ -1723,6 +1723,12 @@ html[data-density="compact"] .content-area .row { --bs-gutter-y: 0.65rem; }
 /* Sales order details: keep card contents comfortably inset from card edges. */
 .sales-order-details-page .dashboard-card > .card-body { padding:20px 22px; }
 .sales-order-details-page .dashboard-card .activity-row { padding-inline:2px; }
+.user-image-picker { display:flex; align-items:center; gap:16px; padding:16px; border:1px dashed var(--border); border-radius:12px; background:var(--surface-2); }
+.user-image-placeholder { width:68px; height:68px; flex:0 0 68px; border-radius:50%; font-size:22px; }
+.user-image-picker-content { min-width:0; flex:1; }
+.user-image-picker-content .form-text { margin-top:6px; }
+.user-name-cell { display:flex; align-items:center; gap:9px; min-width:150px; }
+.user-table-avatar { width:32px; height:32px; flex:0 0 32px; border-radius:50%; font-size:11px; }
 @media (max-width:575.98px) {
   .user-profile-card > .card-body,
   .user-permissions-card > .card-body,
@@ -1732,4 +1738,6 @@ html[data-density="compact"] .content-area .row { --bs-gutter-y: 0.65rem; }
   .user-profile-facts > div > strong { font-size:14px; }
   .user-location-card > .card-body { padding:14px; }
   .sales-order-details-page .dashboard-card > .card-body { padding:16px; }
+  .user-image-picker { align-items:flex-start; gap:12px; padding:12px; }
+  .user-image-placeholder { width:54px; height:54px; flex-basis:54px; font-size:18px; }
 }
