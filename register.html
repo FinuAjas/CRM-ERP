@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sign in to the Food CRM workspace.">
-  <title>Sign in · Food CRM</title>
+  <meta name="description" content="Create your Food CRM business account.">
+  <title>Create account · Food CRM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,28 +22,29 @@
           <span><strong>Food<span>CRM</span></strong><small>Business Platform</small></span>
         </a>
         <div class="auth-visual-copy">
-          <span class="auth-visual-kicker">Business access</span>
-          <h2>Every order, route, and customer. In sync.</h2>
-          <p>One clear workspace for your team to keep daily retail operations moving.</p>
+          <span class="auth-visual-kicker">Start your workspace</span>
+          <h2>Bring your business into focus.</h2>
+          <p>Connect your team, customers, sales, and stock in one practical place.</p>
         </div>
         <img class="auth-illustration" src="assets/images/auth-access-illustration.png" alt="" aria-hidden="true">
-        <div class="auth-visual-note"><i class="bi bi-shield-check"></i><span>A secure workspace, built for your team</span></div>
+        <div class="auth-visual-note"><i class="bi bi-shield-check"></i><span>Set up your team’s secure workspace</span></div>
       </aside>
       <section class="auth-panel" aria-labelledby="authTitle">
         <div class="auth-panel-tools">
           <button type="button" class="btn btn-icon" id="themeToggle" title="Toggle light/dark mode" aria-label="Toggle light/dark mode"><i class="bi bi-moon-stars" id="themeIcon"></i></button>
         </div>
         <div class="auth-card">
-          <span class="auth-kicker">Food CRM account</span>
-          <div class="auth-heading"><h1 id="authTitle">Welcome back</h1><p>Sign in to continue to your business workspace.</p></div>
+          <span class="auth-kicker">Create a Food CRM account</span>
+          <div class="auth-heading"><h1 id="authTitle">Get started</h1><p>Set up your business workspace in a few steps.</p></div>
           <form class="crm-form auth-form-stack" data-demo-form>
-            <div class="form-group"><label class="form-label" for="loginEmail">Email or username</label><input class="form-control" id="loginEmail" name="username" autocomplete="username" placeholder="you@company.com" required></div>
-            <div class="form-group"><label class="form-label" for="loginPassword">Password</label><input class="form-control" type="password" id="loginPassword" name="password" autocomplete="current-password" placeholder="Enter your password" required></div>
-            <div class="auth-form-links"><label class="form-check mb-0"><input class="form-check-input" type="checkbox" checked><span class="form-check-label">Remember me</span></label><a href="forgot-password.html">Forgot password?</a></div>
-            <button class="btn btn-primary w-100" type="submit">Sign in <i class="bi bi-arrow-right ms-2"></i></button>
+            <div class="form-group"><label class="form-label" for="registerName">Your name</label><input class="form-control" id="registerName" name="name" autocomplete="name" placeholder="Full name" required></div>
+            <div class="form-group"><label class="form-label" for="registerBusiness">Business name</label><input class="form-control" id="registerBusiness" name="organization" autocomplete="organization" placeholder="Your company" required></div>
+            <div class="form-group"><label class="form-label" for="registerEmail">Work email</label><input class="form-control" id="registerEmail" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+            <div class="form-group"><label class="form-label" for="registerPassword">Create password</label><input class="form-control" id="registerPassword" name="new-password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required></div>
+            <label class="form-check"><input class="form-check-input" type="checkbox" required><span class="form-check-label">I agree to the account terms and privacy policy.</span></label>
+            <button class="btn btn-primary w-100" type="submit">Create account <i class="bi bi-arrow-right ms-2"></i></button>
           </form>
-          <div class="auth-footer"><span>New to Food CRM?</span><a href="register.html">Create an account</a></div>
-          <p class="auth-legal">By continuing, you agree to your organization’s access and security policies.</p>
+          <div class="auth-footer"><span>Already have an account?</span><a href="login.html">Sign in</a></div>
         </div>
       </section>
     </div>
