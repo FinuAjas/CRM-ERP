@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Modern Food Retail CRM Dashboard">
-  <title>Create Sales Return · Food CRM</title>
+  <title>Add New Van · Food CRM</title>
 
   <!-- Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +18,8 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/preferences.js"></script>
-</head>
-<body data-sales-page="sales-return-create.html">
-<div class="app-shell">
+</head><body data-crm-page="add-new-van.html">
+  <div class="app-shell">
 
     <!-- Mobile backdrop -->
     <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
@@ -44,13 +43,13 @@
         <div class="nav-section-label">MAIN MENU</div>
         <nav class="nav flex-column app-nav">
 
-          <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+          <a class="nav-link active" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
 
           <div class="nav-dropdown">
-            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#salesMenu" aria-expanded="true">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#salesMenu" aria-expanded="false">
               <i class="bi bi-cart3"></i><span>Sales</span><span class="nav-badge">12</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu show" id="salesMenu">
+            <div class="collapse nav-submenu" id="salesMenu">
               <a class="nav-sublink" href="sales.html">Sales Overview</a>
               <a class="nav-sublink" href="sales-orders.html">Sales Orders</a>
               <a class="nav-sublink" href="sales-order-create.html">Create Sales Order</a>
@@ -59,10 +58,10 @@
           </div>
 
           <div class="nav-dropdown">
-            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#vanSalesMenu" aria-expanded="false">
+            <button class="nav-link nav-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#vanSalesMenu" aria-expanded="true">
               <i class="bi bi-truck"></i><span>Van Sales</span><i class="bi bi-chevron-down nav-chevron"></i>
             </button>
-            <div class="collapse nav-submenu" id="vanSalesMenu">
+            <div class="collapse nav-submenu show" id="vanSalesMenu">
               <a class="nav-sublink" href="van-dashboard.html">Van Dashboard</a>
               <a class="nav-sublink" href="van-details.html">Van Details</a>
               <a class="nav-sublink" href="van-sales-entry.html">Van Sales Entry</a>
@@ -70,7 +69,7 @@
               <a class="nav-sublink" href="route-planning.html">Route Planning</a>
               <a class="nav-sublink" href="van-collections.html">Collections</a>
               <a class="nav-sublink" href="van-returns.html">Van Returns</a>
-              <a class="nav-sublink" href="add-new-van.html">Add New Van</a>
+              <a class="nav-sublink active" href="add-new-van.html" aria-current="page">Add New Van</a>
             </div>
           </div>
 
@@ -330,14 +329,16 @@
     </aside>
 
     <!-- Main -->
-<main class="app-main">      <header class="topbar">
+    <main class="app-main">
+      <!-- Topbar -->
+      <header class="topbar">
         <div class="d-flex align-items-center gap-2">
           <button class="btn btn-icon d-lg-none" id="sidebarToggle" aria-label="Open menu">
             <i class="bi bi-list"></i>
           </button>
           <div class="breadcrumb-wrap">
-            <span class="eyebrow">Returns &amp; Claims</span>
-            <h1 class="page-title mb-0">Create Sales Return</h1>
+            <span class="eyebrow">Van Sales</span>
+            <h1 class="page-title mb-0">Add New Van</h1>
           </div>
         </div>
 
@@ -419,31 +420,53 @@
             </ul>
           </div>
         </div>
-      </header><div class="content-area"><section class="page-intro">
-      <div><h2>Create sales return</h2><p>Record returned goods, reason and refund disposition.</p></div>
-      <div class="d-flex gap-2 flex-wrap"><a class="btn btn-soft" href="sales-returns.html"><i class="bi bi-arrow-left me-2"></i>Back to returns</a></div>
-    </section>
-    <form class="sales-form" data-demo-form><div class="row g-3"><div class="col-12 col-xl-8">
-      <section class="dashboard-card mb-3"><div class="card-header"><div><h5>Return information</h5><p>Link the return to its original sale.</p></div><i class="bi bi-arrow-return-left text-primary"></i></div><div class="card-body"><div class="row g-3">
-        <div class="col-12 col-md-6"><label class="form-label">Customer <span class="text-danger">*</span></label><input class="form-control" list="customerOptions" value="City Bakery & Stores" required><datalist id="customerOptions"><option value="Green Basket Supermarket"><option value="City Bakery & Stores"><option value="Fatima Traders"><option value="Fresh Mart Kochi"><option value="Malabar Food Hub"><option value="Spice Route Retail"><option value="Cochin Catering Co."></datalist></div><div class="col-12 col-md-6"><label class="form-label">Original invoice</label><select class="form-select"><option>INV-2026-0908 · ₹ 18,420</option><option>INV-2026-0876 · ₹ 9,860</option></select></div>
-        <div class="col-12 col-md-4"><label class="form-label">Return date</label><input type="date" class="form-control" value="2026-09-26"></div><div class="col-12 col-md-4"><label class="form-label">Salesperson</label><select class="form-select"><option>Arjun Nair</option><option>Anjali Menon</option><option>Fathima K.</option></select></div><div class="col-12 col-md-4"><label class="form-label">Return reason</label><select class="form-select"><option>Damaged in transit</option><option>Expired / near expiry</option><option>Wrong item</option><option>Customer changed mind</option><option>Quality issue</option></select></div>
-      </div></div></section>
-      <section class="dashboard-card mb-3"><div class="card-header"><div><h5>Returned products</h5><p>Enter the quantity and choose the stock disposition.</p></div><button class="btn btn-soft btn-sm" type="button" data-add-line><i class="bi bi-plus-lg me-1"></i>Add item</button></div><div class="table-responsive"><table class="table dashboard-table line-item-table mb-0" data-line-items><thead><tr><th>#</th><th>Product</th><th>Quantity</th><th>Unit price</th><th>Discount</th><th>GST</th><th class="text-end">Refund</th><th></th></tr></thead><tbody><tr>
-      <td class="line-number">1</td>
-      <td><select class="form-select form-select-sm" data-product><option value="" data-price="0">Select product</option><option value="Malabar Puttu Podi 1kg" data-price="145">Malabar Puttu Podi 1kg</option><option value="Kerala Garam Masala 200g" selected data-price="92">Kerala Garam Masala 200g</option><option value="Coconut Pickle 400g" data-price="118">Coconut Pickle 400g</option><option value="Premium Tea 500g" data-price="210">Premium Tea 500g</option><option value="Cardamom Powder 100g" data-price="165">Cardamom Powder 100g</option></select></td>
-      <td><input class="form-control form-control-sm" type="number" min="0" step="1" value="4" data-qty aria-label="Quantity"></td>
-      <td><input class="form-control form-control-sm" type="number" min="0" step="0.01" value="92" data-price aria-label="Unit price"></td>
-      <td><div class="input-group input-group-sm"><input class="form-control" type="number" min="0" max="100" step="0.1" value="0" data-discount aria-label="Discount percent"><span class="input-group-text">%</span></div></td>
-      <td><div class="input-group input-group-sm"><input class="form-control" type="number" min="0" max="100" step="0.1" value="5" data-tax aria-label="GST percent"><span class="input-group-text">%</span></div></td>
-      <td class="text-end fw-semibold" data-line-total>₹ 386.40</td>
-      <td><button class="btn btn-icon-sm text-danger" type="button" data-remove-line aria-label="Remove item"><i class="bi bi-trash"></i></button></td>
-    </tr></tbody></table></div></section>
-      <section class="dashboard-card"><div class="card-body"><div class="row g-3"><div class="col-12 col-md-6"><label class="form-label">Stock disposition</label><select class="form-select"><option>Return to saleable stock</option><option>Quarantine for inspection</option><option>Write off as damaged</option></select></div><div class="col-12 col-md-6"><label class="form-label">Refund method</label><select class="form-select"><option>Credit note</option><option>Cash refund</option><option>UPI refund</option><option>Bank transfer</option></select></div><div class="col-12"><label class="form-label">Notes</label><textarea class="form-control" rows="3" placeholder="Describe the issue or inspection notes…"></textarea></div><div class="col-12"><label class="form-label">Photo / document</label><input class="form-control" type="file" accept=".pdf,.jpg,.jpeg,.png"></div></div></div></section>
-    </div><div class="col-12 col-xl-4"><section class="dashboard-card sticky-summary"><div class="card-header"><div><h5>Return summary</h5><p>Credit due to customer.</p></div></div><div class="card-body"><div class="summary-line"><span>Items subtotal</span><strong data-subtotal>₹ 368.00</strong></div><div class="summary-line"><span>Discount</span><strong data-discount-total>− ₹ 0.00</strong></div><div class="summary-line"><span>Tax adjustment</span><strong data-tax-total>₹ 18.40</strong></div><div class="summary-line grand-total"><span>Credit total</span><strong data-grand-total>₹ 386.40</strong></div><div class="summary-line"><span>Refund status</span><span><span class="status-pill status-warning">Pending</span></span></div><div class="d-grid gap-2 mt-4"><button class="btn btn-primary" type="submit"><i class="bi bi-check2-circle me-2"></i>Save return</button><button class="btn btn-soft" type="button" data-save-draft>Save as draft</button></div></div></section></div></div></form>
-      <div class="sales-live-toast" id="salesToast" role="status" aria-live="polite" aria-atomic="true"><i class="bi bi-check-circle-fill"></i><span>Changes saved in this demo.</span></div><footer class="app-footer"><span>Food CRM · Sales</span><span>© 2026 · All rights reserved</span></footer></div></main></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
-  <script src="assets/js/app.js"></script>
-  
-</body>
-</html>
+      </header>
+
+      <div class="content-area van-add-page">
+        <section class="page-intro">
+          <div><h2>Add New Van</h2><p>Register a delivery vehicle and assign it to a driver and route.</p></div>
+          <a class="btn btn-soft" href="van-dashboard.html"><i class="bi bi-arrow-left me-2"></i>Back to van dashboard</a>
+        </section>
+        <div class="row g-3 align-items-start">
+          <div class="col-xl-8">
+            <section class="dashboard-card van-add-form-card">
+              <div class="card-header"><div><h5>Vehicle details</h5><p>Enter the van registration and fleet assignment.</p></div><span class="status-pill status-info">New vehicle</span></div>
+              <div class="card-body">
+                <form class="row g-3 mx-0">
+                  <div class="col-md-6"><label class="form-label" for="vanRegistration">Registration number</label><input class="form-control" id="vanRegistration" name="registration" placeholder="KL-07-AB-0000" required></div>
+                  <div class="col-md-6"><label class="form-label" for="vanName">Vehicle name</label><input class="form-control" id="vanName" name="name" placeholder="e.g. Kochi delivery van"></div>
+                  <div class="col-md-6"><label class="form-label" for="vanMake">Make and model</label><input class="form-control" id="vanMake" name="make" placeholder="e.g. Tata Ace Gold"></div>
+                  <div class="col-md-6"><label class="form-label" for="vanCapacity">Load capacity (cases)</label><input class="form-control" type="number" min="1" id="vanCapacity" name="capacity" placeholder="120"></div>
+                  <div class="col-md-6"><label class="form-label" for="vanDriver">Assigned driver</label><select class="form-select" id="vanDriver" name="driver"><option selected disabled>Select a driver</option><option>Anjali Menon</option><option>Arjun Nair</option><option>Meera Thomas</option><option>Vijay Kumar</option></select></div>
+                  <div class="col-md-6"><label class="form-label" for="vanRoute">Default route</label><select class="form-select" id="vanRoute" name="route"><option selected disabled>Select a route</option><option>Kochi South</option><option>Ernakulam Central</option><option>Aluva Loop</option><option>Calicut Market</option></select></div>
+                  <div class="col-md-6"><label class="form-label" for="vanFuel">Fuel type</label><select class="form-select" id="vanFuel" name="fuel"><option>Diesel</option><option>Petrol</option><option>Electric</option><option>CNG</option></select></div>
+                  <div class="col-md-6"><label class="form-label" for="vanInsurance">Insurance expiry</label><input class="form-control" type="date" id="vanInsurance" name="insuranceExpiry"></div>
+                  <div class="col-12"><label class="form-label" for="vanNotes">Notes</label><textarea class="form-control" id="vanNotes" name="notes" rows="3" placeholder="Add a fleet note (optional)"></textarea></div>
+                  <div class="col-12"><div class="van-form-actions"><button class="btn btn-soft" type="reset">Clear form</button><button class="btn btn-primary" type="button"><i class="bi bi-check2 me-2"></i>Add van to fleet</button></div></div>
+                </form>
+              </div>
+            </section>
+          </div>
+          <div class="col-xl-4">
+            <section class="dashboard-card van-add-photo-card mb-3">
+              <div class="card-header"><div><h5>Vehicle image</h5><p>Keep the fleet record easy to identify.</p></div></div>
+              <div class="card-body">
+                <div class="van-add-preview"><img src="assets/images/van-teal.png" alt="Example Food CRM delivery van"></div>
+                <label class="form-label mt-3" for="vanImage">Upload vehicle image</label>
+                <input class="form-control" type="file" id="vanImage" name="image" accept="image/*">
+                <small class="form-text">Choose a clear side view of the vehicle.</small>
+              </div>
+            </section>
+            <section class="dashboard-card van-add-checklist">
+              <div class="card-header"><div><h5>Before dispatch</h5><p>Complete these fleet details.</p></div></div>
+              <div class="card-body">
+                <div class="van-checklist-item"><i class="bi bi-card-text"></i><span>Verify the registration number</span></div>
+                <div class="van-checklist-item"><i class="bi bi-person-check"></i><span>Assign an available driver</span></div>
+                <div class="van-checklist-item"><i class="bi bi-signpost-2"></i><span>Choose the default route</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+                <footer class="app-footer"><span>Food CRM · Van Sales</span><span>© 2026 · All rights reserved</span></footer>
+      </div>
+    </main></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script><script src="assets/js/app.js"></script></body></html>

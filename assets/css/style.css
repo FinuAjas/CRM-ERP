@@ -911,7 +911,7 @@ a { color: inherit; }
   .breadcrumb-wrap .eyebrow { display:none; }
   .page-title { font-size:21px; }
   .topbar-actions { gap:3px; }
-  .topbar-actions > .btn-icon:nth-child(1) { display:none; }
+  .topbar-search { display:none; }
   .user-menu { padding-left:3px; }
   .page-intro { margin-bottom:15px; }
   .filter-card .card-body { padding:12px; }
@@ -921,6 +921,19 @@ a { color: inherit; }
   .legend-item { display:none; }
   .quick-reports-grid { grid-template-columns:1fr; }
 }
+
+@media (max-width:400px) {
+  .topbar { gap:6px; padding-inline:9px; }
+  .topbar > .d-flex { min-width:0; }
+  .breadcrumb-wrap { min-width:0; max-width:calc(100vw - 190px); }
+  .page-title { max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .notification-dropdown { display:none; }
+  .topbar-actions { flex:0 0 auto; gap:2px; }
+}
+
+/* Keep Bootstrap grid columns inside the card's own padding. */
+.card-body > .row { margin-inline:0; }
+.card-body.row { margin-inline:0; }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -1813,4 +1826,178 @@ html[data-density="compact"] .content-area .row { --bs-gutter-y: 0.65rem; }
   .auth-illustration { width:76%; right:-12%; }
   .auth-panel { padding:32px 18px 22px; }
   .auth-form-links { align-items:flex-start; }
+}
+
+/* Van sales pages */
+.van-fleet-hero {
+  position:relative; display:flex; align-items:center; min-height:218px; overflow:hidden; isolation:isolate;
+  margin-bottom:18px; padding:clamp(24px,4vw,40px); border:1px solid rgba(255,255,255,.08); border-radius:16px;
+  color:#fff; background:linear-gradient(112deg,#0b2535 0%,#0c5d55 58%,#16866a 100%); box-shadow:0 12px 30px rgba(13,58,61,.14);
+}
+.van-fleet-hero::after { position:absolute; z-index:-1; inset:0; content:""; background:radial-gradient(circle at 74% 45%,rgba(119,229,190,.28),transparent 34%),linear-gradient(90deg,rgba(3,20,34,.16),transparent 70%); }
+.van-fleet-copy { position:relative; z-index:2; max-width:54%; }
+.van-fleet-kicker { display:inline-flex; align-items:center; gap:7px; color:#9ce4ca; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.van-fleet-copy h3 { margin:9px 0 7px; color:inherit; font-size:clamp(22px,2.5vw,30px); font-weight:700; letter-spacing:-.7px; }
+.van-fleet-copy p { max-width:420px; margin:0; color:rgba(255,255,255,.76); font-size:12px; line-height:1.65; }
+.van-fleet-actions { display:flex; align-items:center; flex-wrap:wrap; gap:10px 16px; margin-top:17px; }
+.van-fleet-actions .btn { border-color:rgba(255,255,255,.28); color:#fff; background:rgba(255,255,255,.1); }
+.van-fleet-actions .btn:hover { background:rgba(255,255,255,.18); }
+.van-fleet-meta { color:rgba(255,255,255,.78); font-size:10px; }
+.van-fleet-meta i { margin-right:4px; color:#9ce4ca; }
+.van-fleet-hero-image { position:absolute; z-index:1; right:3%; bottom:-14%; width:min(47%,560px); height:128%; object-fit:contain; object-position:center bottom; filter:drop-shadow(0 14px 13px rgba(0,0,0,.18)); pointer-events:none; }
+.van-table-cell { display:flex; align-items:center; gap:8px; min-width:148px; color:var(--text); font-weight:600; white-space:nowrap; }
+.van-table-cell img { width:48px; height:31px; flex:0 0 48px; padding:2px; border:1px solid var(--border); border-radius:7px; background:var(--surface-2); object-fit:contain; }
+.van-selected-card { display:flex; align-items:center; gap:12px; margin-bottom:14px; padding:12px 14px; border:1px solid var(--border); border-radius:12px; background:var(--surface); box-shadow:var(--shadow-sm,0 5px 18px rgba(20,42,68,.05)); }
+.van-selected-card > img { width:94px; height:59px; flex:0 0 94px; padding:3px; border-radius:9px; background:var(--surface-2); object-fit:contain; }
+.van-selected-copy { display:grid; gap:3px; min-width:0; }
+.van-selected-copy span { color:var(--muted); font-size:10px; }
+.van-selected-copy strong { color:var(--text); font-size:13px; }
+.van-selected-copy small { color:var(--muted); font-size:10px; }
+.van-selected-card .status-pill { margin-left:auto; }
+[data-bs-theme="dark"] .van-fleet-hero { background:linear-gradient(112deg,#0a1828 0%,#0d3c3b 58%,#105342 100%); box-shadow:0 12px 30px rgba(0,0,0,.2); }
+[data-bs-theme="dark"] .van-table-cell img,[data-bs-theme="dark"] .van-selected-card > img { background:#1a2938; }
+@media (max-width:767.98px) {
+  .van-fleet-hero { min-height:196px; padding:22px; }
+  .van-fleet-copy { max-width:70%; }
+  .van-fleet-hero-image { right:-8%; bottom:-7%; width:56%; height:112%; opacity:.9; }
+  .van-fleet-copy h3 { font-size:22px; }
+  .van-fleet-copy p { font-size:11px; }
+  .van-table-cell { min-width:136px; gap:6px; }
+  .van-table-cell img { width:42px; height:28px; flex-basis:42px; }
+}
+@media (max-width:479.98px) {
+  .van-fleet-hero { min-height:218px; align-items:flex-start; padding:20px 18px; }
+  .van-fleet-copy { max-width:100%; padding-bottom:76px; }
+  .van-fleet-hero-image { right:-8%; bottom:-18%; width:65%; height:91%; opacity:.72; }
+  .van-fleet-actions { gap:8px; margin-top:12px; }
+  .van-fleet-meta { font-size:9px; }
+  .van-selected-card { gap:9px; padding:10px; }
+  .van-selected-card > img { width:72px; height:48px; flex-basis:72px; }
+  .van-selected-card .status-pill { padding:3px 6px; font-size:9px; }
+}
+.van-sales-entry-page .dashboard-card > .card-body { padding:20px 22px; }
+.van-sales-entry-page .dashboard-card > .card-body > .row { margin-inline:0; }
+.van-add-page .van-add-form-card > .card-body { padding:22px 24px; }
+.van-add-form-card .form-label { margin-bottom:7px; color:var(--text); font-size:12px; font-weight:600; }
+.van-add-form-card .form-control,.van-add-form-card .form-select { min-height:42px; border-radius:9px; }
+.van-add-form-card textarea.form-control { min-height:92px; }
+.van-form-actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:9px; margin-top:3px; }
+.van-add-preview { display:grid; place-items:center; min-height:150px; overflow:hidden; border:1px solid var(--border); border-radius:12px; background:var(--surface-2); }
+.van-add-preview img { display:block; width:100%; aspect-ratio:1.65; object-fit:contain; }
+.van-add-photo-card .form-label { color:var(--text); font-size:12px; font-weight:600; }
+.van-add-photo-card .form-control { font-size:11px; }
+.van-add-photo-card .form-text { display:block; margin-top:6px; color:var(--muted); font-size:10px; }
+.van-checklist-item { display:flex; align-items:center; gap:9px; padding:9px 0; border-bottom:1px solid var(--border); color:var(--muted); font-size:11px; }
+.van-checklist-item:last-child { border-bottom:0; }
+.van-checklist-item i { color:var(--primary-2); font-size:15px; }
+@media (max-width:575.98px) {
+  .van-sales-entry-page .dashboard-card > .card-body { padding:16px; }
+  .van-add-page .van-add-form-card > .card-body { padding:17px 16px; }
+  .van-form-actions { justify-content:stretch; }
+  .van-form-actions .btn { flex:1 1 auto; }
+}
+.van-detail-toolbar { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:8px; }
+.van-delete-link { color:#bc3f4c; border-color:rgba(188,63,76,.3); }
+.van-delete-link:hover { color:#a52d3b; border-color:rgba(188,63,76,.55); background:rgba(188,63,76,.07); }
+.btn-danger-soft { display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(188,63,76,.3); border-radius:9px; color:#bc3f4c; background:rgba(188,63,76,.07); font-size:12px; font-weight:600; }
+.btn-danger-soft:hover { color:#fff; border-color:#bc3f4c; background:#bc3f4c; }
+.van-detail-hero { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 24px; border:1px solid var(--border); border-radius:14px; }
+.van-detail-main { display:flex; align-items:center; gap:20px; min-width:0; }
+.van-detail-photo { display:grid; place-items:center; width:190px; height:122px; flex:0 0 190px; overflow:hidden; border:1px solid var(--border); border-radius:12px; background:var(--surface-2); }
+.van-detail-photo img { width:100%; height:100%; object-fit:contain; }
+.van-detail-copy { min-width:0; }
+.van-detail-eyebrow { color:var(--muted); font-size:10px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+.van-detail-copy h2 { margin:5px 0 2px; color:var(--text); font-size:clamp(21px,2.2vw,28px); font-weight:700; letter-spacing:-.6px; }
+.van-detail-copy p { margin:0; color:var(--muted); font-size:12px; }
+.van-detail-badges { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin-top:11px; }
+.van-detail-badges .status-pill { display:inline-flex; align-items:center; gap:6px; }
+.van-detail-badges .status-pill i { font-size:7px; }
+.van-live-badge { display:inline-flex; align-items:center; gap:5px; color:#07815e; font-size:10px; font-weight:600; }
+.van-live-badge i { font-size:13px; }
+.van-detail-sync { display:grid; gap:3px; min-width:150px; padding:12px 15px; border-left:1px solid var(--border); }
+.van-detail-sync span,.van-detail-sync small { color:var(--muted); font-size:10px; }
+.van-detail-sync strong { color:var(--text); font-size:20px; line-height:1.25; }
+.van-route-card .card-body,.van-live-location-card > .card-body,.van-driver-card > .card-body,.van-edit-card > .card-body,.van-status-card > .card-body,.van-delete-card > .card-body { padding:18px 20px; }
+.van-route-map { position:relative; min-height:280px; overflow:hidden; border:1px solid var(--border); border-radius:12px; background-color:#eaf3e9; background-image:linear-gradient(90deg,rgba(82,145,105,.1) 1px,transparent 1px),linear-gradient(rgba(82,145,105,.1) 1px,transparent 1px); background-size:34px 34px; }
+.van-route-map::before { position:absolute; top:-32%; right:-10%; width:30%; height:170%; content:""; transform:rotate(17deg); border-radius:50%; background:#cae6ef; }
+.van-route-map svg { position:absolute; inset:0; width:100%; height:100%; }
+.van-map-road { fill:none; stroke:#fff; stroke-width:13; stroke-linecap:round; opacity:.96; }
+.van-route-line { fill:none; stroke:#12936f; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1 0; filter:drop-shadow(0 1px 1px rgba(13,72,56,.2)); }
+.van-route-stop { fill:#fff; stroke:#12936f; stroke-width:4; }
+.van-map-current { fill:#efaa32; stroke:#fff; stroke-width:5; filter:drop-shadow(0 2px 5px rgba(24,53,46,.35)); }
+.van-map-label { position:absolute; z-index:1; padding:4px 7px; border:1px solid rgba(104,126,108,.18); border-radius:6px; color:#4d6555; background:rgba(255,255,255,.83); font-size:9px; font-weight:600; box-shadow:0 2px 8px rgba(33,60,45,.06); }
+.van-map-depot { left:7%; bottom:14%; }
+.van-map-marine { left:34%; top:39%; }
+.van-map-market { right:4%; top:12%; }
+.van-map-current-tag { position:absolute; z-index:2; top:25%; right:4%; display:flex; align-items:center; gap:5px; padding:5px 8px; border:1px solid var(--border); border-radius:8px; color:var(--text); background:var(--surface); font-size:9px; font-weight:600; box-shadow:0 4px 12px rgba(22,47,71,.12); }
+.van-map-current-tag i { color:#d78b16; }
+.van-route-map-footer { display:flex; align-items:center; flex-wrap:wrap; gap:9px 18px; margin-top:11px; }
+.van-route-map-footer > span { display:flex; align-items:center; gap:6px; color:var(--muted); font-size:10px; }
+.van-route-map-footer i { font-size:7px; }
+.route-dot-done { color:#12936f; }
+.route-dot-current { color:#e4a12d; }
+.route-dot-next { color:#8090a1; }
+.van-gps-badge { color:#07815e; background:rgba(7,129,94,.1); }
+.van-gps-badge > span { background:#10a779; box-shadow:0 0 0 3px rgba(16,167,121,.13); }
+.van-location-primary { display:flex; align-items:center; gap:10px; padding:2px 0 14px; border-bottom:1px solid var(--border); }
+.van-location-primary > i { display:grid; place-items:center; width:36px; height:36px; flex:0 0 36px; border-radius:10px; color:#0d9870; background:rgba(13,152,112,.1); }
+.van-location-primary strong,.van-location-primary small { display:block; }
+.van-location-primary strong { color:var(--text); font-size:12px; }
+.van-location-primary small { margin-top:3px; color:var(--muted); font-size:10px; }
+.van-location-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px 8px; padding-top:14px; }
+.van-location-grid > div { display:grid; gap:3px; min-width:0; }
+.van-location-grid span { color:var(--muted); font-size:9px; }
+.van-location-grid strong { color:var(--text); font-size:10px; overflow-wrap:anywhere; }
+.van-live-location-card .location-map-link { margin-top:14px; }
+.van-live-location-card .location-note { text-align:left; }
+.van-driver-profile { display:flex; align-items:center; gap:10px; min-width:0; }
+.van-driver-avatar { display:grid; place-items:center; width:40px; height:40px; flex:0 0 40px; border-radius:12px; color:#fff; background:linear-gradient(135deg,#156b69,#13865e); font-size:12px; font-weight:700; }
+.van-driver-profile > div { display:grid; gap:3px; min-width:0; }
+.van-driver-profile strong { color:var(--text); font-size:12px; }
+.van-driver-profile small { color:var(--muted); font-size:10px; }
+.van-driver-profile .status-pill { margin-left:auto; }
+.van-driver-meta { display:grid; grid-template-columns:1fr auto; gap:8px; margin-top:14px; padding-top:12px; border-top:1px solid var(--border); }
+.van-driver-meta span { color:var(--muted); font-size:10px; }
+.van-driver-meta strong { color:var(--text); font-size:10px; }
+.van-activity-card .activity-row { padding-block:8px; }
+.van-edit-card .form-label,.van-status-card .form-label { color:var(--text); font-size:11px; font-weight:600; }
+.van-edit-card .form-control,.van-edit-card .form-select,.van-status-card .form-control,.van-status-card .form-select { min-height:40px; border-radius:9px; }
+.van-action-note { display:block; margin-top:9px; color:var(--muted); font-size:9px; text-align:center; }
+.van-delete-card { border:1px solid rgba(188,63,76,.25); border-radius:12px; }
+.van-delete-card .card-header { border-bottom-color:rgba(188,63,76,.18); }
+.van-delete-card .card-header h5 { color:#b63d4b; }
+.van-delete-card .card-body > p { margin:0 0 12px; color:var(--muted); font-size:10px; line-height:1.55; }
+.van-delete-disclosure summary { width:100%; list-style:none; cursor:pointer; }
+.van-delete-disclosure summary::-webkit-details-marker { display:none; }
+.van-delete-confirm { display:grid; gap:8px; margin-top:12px; padding:12px; border:1px solid rgba(188,63,76,.2); border-radius:9px; background:rgba(188,63,76,.04); }
+.van-delete-confirm strong { color:var(--text); font-size:11px; }
+.van-delete-confirm p { margin:0; color:var(--muted); font-size:10px; }
+[data-bs-theme="dark"] .van-route-map { background-color:#1c302b; background-image:linear-gradient(90deg,rgba(160,192,164,.1) 1px,transparent 1px),linear-gradient(rgba(160,192,164,.1) 1px,transparent 1px); }
+[data-bs-theme="dark"] .van-route-map::before { background:#254252; }
+[data-bs-theme="dark"] .van-map-road { stroke:#405148; }
+[data-bs-theme="dark"] .van-map-label { border-color:rgba(255,255,255,.12); color:#c8d9cc; background:rgba(23,38,35,.92); }
+[data-bs-theme="dark"] .van-map-current-tag { background:var(--surface); }
+[data-bs-theme="dark"] .van-gps-badge { color:#60d4ab; background:rgba(7,129,94,.16); }
+@media (max-width:991.98px) {
+  .van-detail-hero { align-items:flex-start; }
+  .van-detail-sync { align-self:stretch; }
+  .van-route-map { min-height:250px; }
+}
+@media (max-width:575.98px) {
+  .van-detail-toolbar { justify-content:flex-start; }
+  .van-detail-toolbar .btn { padding:7px 9px; font-size:10px; }
+  .van-detail-hero { align-items:stretch; flex-direction:column; gap:12px; padding:15px; }
+  .van-detail-main { align-items:flex-start; gap:12px; }
+  .van-detail-photo { width:105px; height:74px; flex-basis:105px; }
+  .van-detail-eyebrow { font-size:8px; }
+  .van-detail-copy h2 { font-size:19px; }
+  .van-detail-copy p { font-size:10px; }
+  .van-detail-sync { min-width:0; padding:10px 0 0; border-top:1px solid var(--border); border-left:0; }
+  .van-detail-sync strong { font-size:17px; }
+  .van-route-card .card-body,.van-live-location-card > .card-body,.van-driver-card > .card-body,.van-edit-card > .card-body,.van-status-card > .card-body,.van-delete-card > .card-body { padding:14px; }
+  .van-route-map { min-height:215px; }
+  .van-map-label { padding:3px 5px; font-size:8px; }
+  .van-map-current-tag { top:32%; right:3%; font-size:8px; }
+  .van-route-map-footer { gap:8px 12px; }
+  .van-route-map-footer > span { font-size:9px; }
 }
